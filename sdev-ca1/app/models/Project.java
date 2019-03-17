@@ -9,7 +9,6 @@ import play.data.format.*;
 import play.data.validation.*;
 
 @Entity
-@Table(name = "project")
 public class Project extends Model{
 
     @Id

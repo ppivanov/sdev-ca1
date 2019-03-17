@@ -61,7 +61,7 @@ public class LoginController extends Controller {
     Form<Employee> newEmpForm = formFactory.form(Employee.class).bindFromRequest();
     Form<Address> newAddressForm = formFactory.form(Address.class).bindFromRequest();
     if (newEmpForm.hasErrors() || newAddressForm.hasErrors()) {
-        
+        flash("error","Please fill in all the fieds!");
         return badRequest(addEmployee.render(newEmpForm, newAddressForm, Employee.getUserById(session().get("email"))));
     } else {
         Employee newEmp = newEmpForm.get();
@@ -127,7 +127,7 @@ public class LoginController extends Controller {
     Form<Employee> newEmpForm = formFactory.form(Employee.class).bindFromRequest();
     Form<Address> newAddressForm = formFactory.form(Address.class).bindFromRequest();
     if (newEmpForm.hasErrors() || newAddressForm.hasErrors()) {
-        
+        flash("error","Please fill in all the fieds!");
         return badRequest(addAdmin.render(newEmpForm, newAddressForm, Employee.getUserById(session().get("email"))));
     } else {
         Employee newEmp = newEmpForm.get();

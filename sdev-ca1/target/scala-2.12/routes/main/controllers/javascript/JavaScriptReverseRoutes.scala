@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Computing/sdev-ca1/sdev-ca1/sdev-ca1/conf/routes
-// @DATE:Sun Mar 17 02:53:57 GMT 2019
+// @DATE:Sun Mar 17 14:43:42 GMT 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -69,12 +69,12 @@ package controllers.javascript {
     }
 
   
-    // @LINE:24
-    def usersEmployee: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.usersEmployee",
+    // @LINE:7
+    def about: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.about",
       """
         function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "employees"})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "about"})
         }
       """
     )
@@ -89,32 +89,22 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:7
-    def about: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.about",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "about"})
-        }
-      """
-    )
-  
-    // @LINE:9
-    def projects: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.projects",
-      """
-        function(empid0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "projects/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("empid", empid0))})
-        }
-      """
-    )
-  
     // @LINE:5
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.index",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + """"})
+        }
+      """
+    )
+  
+    // @LINE:24
+    def usersEmployee: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.usersEmployee",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "employees"})
         }
       """
     )

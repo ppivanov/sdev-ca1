@@ -1,5 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0mD:\Computing\sdev-ca1\sdev-ca1\sdev-ca1\app\controllers\HomeController.java:52:1:  error: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m        return ok(projects.render(projects, Employee.getUserById(session().get("email"))));[0m
-[0m[[0m[31merror[0m] [0m[0m                          ^  symbol:   method render(List<Project>,Employee)[0m
-[0m[[0m[31merror[0m] [0m[0m  location: variable projects of type List<Project>[0m
-[0m[[0m[31merror[0m] [0m[0m1 error[0m

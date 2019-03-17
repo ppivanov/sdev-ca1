@@ -35,36 +35,39 @@ object addAdmin extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.H
 Seq[Any](format.raw/*2.1*/("""
 """),format.raw/*5.1*/("""
 """),_display_(/*6.2*/main("Add an administrator", user)/*6.36*/{_display_(Seq[Any](format.raw/*6.37*/("""
-    """),format.raw/*7.5*/("""<p class="lead">Add a new administrator</p>
+    """),_display_(/*7.6*/if(flash.containsKey("error"))/*7.36*/ {_display_(Seq[Any](format.raw/*7.38*/("""
+		"""),format.raw/*8.3*/("""<div class="alert alert-success">
+			"""),_display_(/*9.5*/flash/*9.10*/.get("error")),format.raw/*9.23*/("""
+		"""),format.raw/*10.3*/("""</div>
+	""")))}),format.raw/*11.3*/("""
+    """),format.raw/*12.5*/("""<p class="lead">Add a new administrator</p>
 
-    """),_display_(/*9.6*/form(action=routes.LoginController.addAdminSubmit(), 'class -> "form-horizontal", 'role -> "form")/*9.104*/ {_display_(Seq[Any](format.raw/*9.106*/("""
-        """),format.raw/*10.37*/("""
-        """),format.raw/*11.99*/("""
-        """),_display_(/*12.10*/CSRF/*12.14*/.formField),format.raw/*12.24*/("""
+    """),_display_(/*14.6*/form(action=routes.LoginController.addAdminSubmit(), 'class -> "form-horizontal", 'role -> "form")/*14.104*/ {_display_(Seq[Any](format.raw/*14.106*/("""
+        """),_display_(/*15.10*/CSRF/*15.14*/.formField),format.raw/*15.24*/("""
 
-            """),_display_(/*14.14*/inputText(userForm("email"), '_label -> "Email", 'class -> "form-control")),format.raw/*14.88*/("""
-            """),_display_(/*15.14*/inputText(userForm("fname"), '_label -> "First name", 'class -> "form-control")),format.raw/*15.93*/("""
-            """),_display_(/*16.14*/inputText(userForm("lname"), '_label -> "Last name", 'class -> "form-control")),format.raw/*16.92*/("""
-            """),_display_(/*17.14*/inputDate(userForm("dob"), args = 'size -> 10, '_label -> "Date Of Birth", 'class -> "form-control")),format.raw/*17.114*/("""
-            """),_display_(/*18.14*/inputText(userForm("password"), '_label -> "Password", 'class -> "form-control")),format.raw/*18.94*/("""
-            """),_display_(/*19.14*/inputText(userForm("mobileNumber"), '_label -> "Mobile number", 'class -> "form-control")),format.raw/*19.103*/("""
+            """),_display_(/*17.14*/inputText(userForm("email"), '_label -> "Email", 'class -> "form-control")),format.raw/*17.88*/("""
+            """),_display_(/*18.14*/inputText(userForm("fname"), '_label -> "First name", 'class -> "form-control")),format.raw/*18.93*/("""
+            """),_display_(/*19.14*/inputText(userForm("lname"), '_label -> "Last name", 'class -> "form-control")),format.raw/*19.92*/("""
+            """),_display_(/*20.14*/inputDate(userForm("dob"), args = 'size -> 10, '_label -> "Date Of Birth", 'class -> "form-control")),format.raw/*20.114*/("""
+            """),_display_(/*21.14*/inputPassword(userForm("password"), '_label -> "Password", 'class -> "form-control")),format.raw/*21.98*/("""
+            """),_display_(/*22.14*/inputText(userForm("mobileNumber"), '_label -> "Mobile number", 'class -> "form-control")),format.raw/*22.103*/("""
 
-            """),format.raw/*21.13*/("""Address:
-            """),_display_(/*22.14*/inputText(addressForm("number"), '_label -> "Number", 'class -> "form-control")),format.raw/*22.93*/("""
-            """),_display_(/*23.14*/inputText(addressForm("street"), '_label -> "Street", 'class -> "form-control")),format.raw/*23.93*/("""
-            """),_display_(/*24.14*/inputText(addressForm("city"), '_label -> "City", 'class -> "form-control")),format.raw/*24.89*/("""
-            """),_display_(/*25.14*/inputText(addressForm("postCode"), '_label -> "Postcode", 'class -> "form-control")),format.raw/*25.97*/("""
+            """),format.raw/*24.13*/("""Address:
+            """),_display_(/*25.14*/inputText(addressForm("number"), '_label -> "Number", 'class -> "form-control")),format.raw/*25.93*/("""
+            """),_display_(/*26.14*/inputText(addressForm("street"), '_label -> "Street", 'class -> "form-control")),format.raw/*26.93*/("""
+            """),_display_(/*27.14*/inputText(addressForm("city"), '_label -> "City", 'class -> "form-control")),format.raw/*27.89*/("""
+            """),_display_(/*28.14*/inputText(addressForm("postCode"), '_label -> "Postcode", 'class -> "form-control")),format.raw/*28.97*/("""
 
-            """),_display_(/*27.14*/inputText(userForm("role").copy(value=Some("admin")), '_label -> "",'hidden -> "hidden")),format.raw/*27.102*/("""
+            """),_display_(/*30.14*/inputText(userForm("role").copy(value=Some("admin")), '_label -> "",'hidden -> "hidden")),format.raw/*30.102*/("""
             
-            """),format.raw/*29.13*/("""<div class="actions">
+            """),format.raw/*32.13*/("""<div class="actions">
                 <input type="submit" value="Add/Update Admin" class="btn btn-primary">
-                <a href=""""),_display_(/*31.27*/routes/*31.33*/.HomeController.index()),format.raw/*31.56*/("""">
+                <a href=""""),_display_(/*34.27*/routes/*34.33*/.HomeController.index()),format.raw/*34.56*/("""">
                     <button type="button" class="btn btn-warning">Cancel</button>
                 </a>
             </div>
-    """)))}),format.raw/*35.6*/(""" """),format.raw/*35.24*/("""
-""")))}),format.raw/*36.2*/(""" """))
+    """)))}),format.raw/*38.6*/(""" """),format.raw/*38.24*/("""
+""")))}),format.raw/*39.2*/(""" """))
       }
     }
   }
@@ -80,11 +83,11 @@ Seq[Any](format.raw/*2.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Mar 17 01:12:30 GMT 2019
+                  DATE: Sun Mar 17 14:54:58 GMT 2019
                   SOURCE: D:/Computing/sdev-ca1/sdev-ca1/sdev-ca1/app/views/addAdmin.scala.html
-                  HASH: a0c1025a1a9c433a308aac7bff255b5ceba884f8
-                  MATRIX: 1021->1|1203->113|1239->143|1283->111|1310->159|1337->161|1379->195|1417->196|1448->201|1523->251|1630->349|1670->351|1707->388|1744->487|1781->497|1794->501|1825->511|1867->526|1962->600|2003->614|2103->693|2144->707|2243->785|2284->799|2406->899|2447->913|2548->993|2589->1007|2700->1096|2742->1110|2791->1132|2891->1211|2932->1225|3032->1304|3073->1318|3169->1393|3210->1407|3314->1490|3356->1505|3466->1593|3520->1619|3682->1754|3697->1760|3741->1783|3901->1913|3930->1931|3962->1933
-                  LINES: 28->1|31->3|32->4|35->2|36->5|37->6|37->6|37->6|38->7|40->9|40->9|40->9|41->10|42->11|43->12|43->12|43->12|45->14|45->14|46->15|46->15|47->16|47->16|48->17|48->17|49->18|49->18|50->19|50->19|52->21|53->22|53->22|54->23|54->23|55->24|55->24|56->25|56->25|58->27|58->27|60->29|62->31|62->31|62->31|66->35|66->35|67->36
+                  HASH: c8e67a4d603a34bfa17dd706acc0fc4068ca9f9a
+                  MATRIX: 1021->1|1203->113|1239->143|1283->111|1310->159|1337->161|1379->195|1417->196|1448->202|1486->232|1525->234|1554->237|1617->275|1630->280|1663->293|1693->296|1732->305|1764->310|1840->360|1948->458|1989->460|2026->470|2039->474|2070->484|2112->499|2207->573|2248->587|2348->666|2389->680|2488->758|2529->772|2651->872|2692->886|2797->970|2838->984|2949->1073|2991->1087|3040->1109|3140->1188|3181->1202|3281->1281|3322->1295|3418->1370|3459->1384|3563->1467|3605->1482|3715->1570|3769->1596|3931->1731|3946->1737|3990->1760|4150->1890|4179->1908|4211->1910
+                  LINES: 28->1|31->3|32->4|35->2|36->5|37->6|37->6|37->6|38->7|38->7|38->7|39->8|40->9|40->9|40->9|41->10|42->11|43->12|45->14|45->14|45->14|46->15|46->15|46->15|48->17|48->17|49->18|49->18|50->19|50->19|51->20|51->20|52->21|52->21|53->22|53->22|55->24|56->25|56->25|57->26|57->26|58->27|58->27|59->28|59->28|61->30|61->30|63->32|65->34|65->34|65->34|69->38|69->38|70->39
                   -- GENERATED --
               */
           

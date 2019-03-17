@@ -10,7 +10,6 @@ import play.data.validation.*;
 
 
 @Entity
-@Table(name = "address")
 public class Address extends Model {
 
     @Id

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Computing/sdev-ca1/sdev-ca1/sdev-ca1/conf/routes
-// @DATE:Sun Mar 17 02:53:57 GMT 2019
+// @DATE:Sun Mar 17 14:43:42 GMT 2019
 
 import play.api.mvc.Call
 
@@ -51,10 +51,10 @@ package controllers {
     }
 
   
-    // @LINE:24
-    def usersEmployee(): Call = {
+    // @LINE:7
+    def about(): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "employees")
+      Call("GET", _prefix + { _defaultPrefix } + "about")
     }
   
     // @LINE:23
@@ -63,22 +63,16 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "admins")
     }
   
-    // @LINE:7
-    def about(): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "about")
-    }
-  
-    // @LINE:9
-    def projects(empid:Long): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "projects/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("empid", empid)))
-    }
-  
     // @LINE:5
     def index(): Call = {
       
       Call("GET", _prefix)
+    }
+  
+    // @LINE:24
+    def usersEmployee(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "employees")
     }
   
   }

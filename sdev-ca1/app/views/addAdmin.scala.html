@@ -4,18 +4,21 @@
 @import helper._
 
 @main("Add an administrator", user){
+    @if(flash.containsKey("error")) {
+		<div class="alert alert-success">
+			@flash.get("error")
+		</div>
+	}
     <p class="lead">Add a new administrator</p>
 
     @form(action=routes.LoginController.addAdminSubmit(), 'class -> "form-horizontal", 'role -> "form") {
-        @* CSRF attack prevention *@
-        @* This token, sent by the controller, will be used to authenticate the form submission *@
         @CSRF.formField
 
             @inputText(userForm("email"), '_label -> "Email", 'class -> "form-control")
             @inputText(userForm("fname"), '_label -> "First name", 'class -> "form-control")
             @inputText(userForm("lname"), '_label -> "Last name", 'class -> "form-control")
             @inputDate(userForm("dob"), args = 'size -> 10, '_label -> "Date Of Birth", 'class -> "form-control")
-            @inputText(userForm("password"), '_label -> "Password", 'class -> "form-control")
+            @inputPassword(userForm("password"), '_label -> "Password", 'class -> "form-control")
             @inputText(userForm("mobileNumber"), '_label -> "Mobile number", 'class -> "form-control")
 
             Address:

@@ -18,7 +18,7 @@
             @inputText(projectForm("id"), '_label -> "", 'hidden -> "hidden")
             <div class="actions">
                 <input type="submit" value="Add/Update Project" class="btn btn-primary">
-                <a href="@routes.HomeController.projects(0)">
+                <a href="@routes.HomeController.index()"> <!-- redirect to projects page -->
                     <button type="button" class="btn btn-warning">Cancel</button>
                 </a>
             </div>

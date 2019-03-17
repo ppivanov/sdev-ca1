@@ -40,17 +40,17 @@ public class HomeController extends Controller {
         return ok(index.render(Employee.getUserById(session().get("email"))));
     }
 
-    public Result projects(Long emp) {
-        List<Project> projects = null;
-        List<Employee> emps = Employee.findAll();
+    // public Result projects(Long emp) {
+    //     List<Project> projects = null;
+    //     List<Employee> emps = Employee.findAll();
         
-        if(emp == 0){
-            projects = Project.findAll();
-        } else {
-            projects = Employee.find.ref(emp).getProjects();
-        }
-        return ok(projects.render(projects, Employee.getUserById(session().get("email"))));
-    }
+    //     if(emp == 0){
+    //         projects = Project.findAll();
+    //     } else {
+    //         projects = Employee.find.ref(emp).getProjects();
+    //     }
+    //     return ok(projects.render(projects, Employee.getUserById(session().get("email"))));
+    // }
 
     public Result about() {
         return ok(about.render(Employee.getUserById(session().get("email"))));

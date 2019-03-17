@@ -12,7 +12,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
-@Table(name = "employee")
 public class Employee extends Model {
 
     @Id
@@ -25,12 +24,13 @@ public class Employee extends Model {
     private String empLastName;
     private String role; //administrator, manager or employee
     @Constraints.Required
+    @Temporal(TemporalType.DATE)
     private Date dob;
     @Constraints.Required
     private String password;
     @Constraints.Required
     private String mobileNumber;
-    @OneToOne(mappedBy="employee", cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     private Address address;
     @ManyToOne
     private Department department;
@@ -92,21 +92,29 @@ public class Employee extends Model {
     }
 
     public String getDateOfBirthString(){
-        try{
+        // try{
             SimpleDateFormat formatter = new SimpleDateFormat("dd MMMM yyyy");  
             String strDate = formatter.format(dob);
             return strDate;
-        } catch (ParseException ex){
-            return "----";
-        }
+        // } catch (ParseException ex){
+            // return "----";
+        // }
     }
 
-    public Date getDateOfBirth(){
+    public Date geDob(){
         return dob;
     }
 
-    public void setDateOfBirth(Date dob){
+    public void setDob(Date dob){
         this.dob = dob;
+    }
+
+    public String getPassword(){
+        return password;
+    }
+
+    public void setPassword(String password){
+        this.password = password;
     }
 
     public String getMobileNumber(){
