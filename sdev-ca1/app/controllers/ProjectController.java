@@ -57,7 +57,7 @@ public class ProjectController extends Controller {
                 flash("success", "Project " + newProject.getProjectName() + " was updated.");
             }
             
-            return redirect(controllers.routes.HomeController.projects());
+            return redirect(controllers.routes.HomeController.projects(0));
         }
     }
 
@@ -82,6 +82,6 @@ public class ProjectController extends Controller {
         Project.find.ref(id).delete();
 
         flash("success", "Project has been deleted.");
-        return redirect(controllers.routes.HomeController.projects());
+        return redirect(controllers.routes.HomeController.projects(0));
     }
 }

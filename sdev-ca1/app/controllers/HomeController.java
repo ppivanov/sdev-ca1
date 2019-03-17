@@ -40,15 +40,15 @@ public class HomeController extends Controller {
         return ok(index.render(Employee.getUserById(session().get("email"))));
     }
 
-    public Result projects(
-        // String employee
-        ) {
+    public Result projects(Long emp) {
         List<Project> projects = null;
-
-        // if(employee.equals("") || employee.equals(" ")){
-        // }
+        List<Employee> emps = Employee.findAll();
+        
+        if(emp == 0){
             projects = Project.findAll();
-       
+        } else {
+            projects = Employee.find.ref(emp).getProjects();
+        }
         return ok(projects.render(projects, Employee.getUserById(session().get("email"))));
     }
 

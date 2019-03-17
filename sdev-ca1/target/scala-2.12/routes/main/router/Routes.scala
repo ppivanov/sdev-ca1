@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Computing/sdev-ca1/sdev-ca1/sdev-ca1/conf/routes
-// @DATE:Sun Mar 17 01:55:07 GMT 2019
+// @DATE:Sun Mar 17 02:53:57 GMT 2019
 
 package router
 
@@ -49,7 +49,7 @@ class Routes(
   def documentation = List(
     ("""GET""", this.prefix, """controllers.HomeController.index"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """about""", """controllers.HomeController.about"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """projects""", """controllers.HomeController.projects"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """projects/""" + "$" + """empid<[^/]+>""", """controllers.HomeController.projects(empid:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """add-project""", """controllers.ProjectController.addProject"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """update-project/""" + "$" + """id<[^/]+>""", """controllers.ProjectController.updateProject(id:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """delete-project/""" + "$" + """id<[^/]+>""", """controllers.ProjectController.deleteProject(id:Long)"""),
@@ -113,17 +113,17 @@ class Routes(
 
   // @LINE:9
   private[this] lazy val controllers_HomeController_projects2_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("projects")))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("projects/"), DynamicPart("empid", """[^/]+""",true)))
   )
   private[this] lazy val controllers_HomeController_projects2_invoker = createInvoker(
-    HomeController_0.projects,
+    HomeController_0.projects(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
       "projects",
-      Nil,
+      Seq(classOf[Long]),
       "GET",
-      this.prefix + """projects""",
+      this.prefix + """projects/""" + "$" + """empid<[^/]+>""",
       """""",
       Seq()
     )
@@ -470,8 +470,8 @@ class Routes(
   
     // @LINE:9
     case controllers_HomeController_projects2_route(params@_) =>
-      call { 
-        controllers_HomeController_projects2_invoker.call(HomeController_0.projects)
+      call(params.fromPath[Long]("empid", None)) { (empid) =>
+        controllers_HomeController_projects2_invoker.call(HomeController_0.projects(empid))
       }
   
     // @LINE:11

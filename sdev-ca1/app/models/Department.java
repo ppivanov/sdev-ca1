@@ -9,7 +9,8 @@ import play.data.format.*;
 import play.data.validation.*;
 
 @Entity
-public class Department {
+@Table(name = "department")
+public class Department extends Model{
 
     @Id
     private Long id;

@@ -1,8 +1,8 @@
 # --- !Ups
 
-insert into address (aid, number, street, city, postcode) values (100, '33', 'Lazy Street', 'Sometown', 'W42ABCD');
+-- insert into address (aid, number, street, city, postcode) values (100, '33', 'Lazy Street', 'Sometown', 'W42ABCD');
 
-insert into department (did, name) values (200, 'Planning');
+-- insert into department (did, name) values (200, 'Planning');
 
 -- insert into project (pid, name, description, status) values (300, 'E-commerce website', '--', 'Planning');
 

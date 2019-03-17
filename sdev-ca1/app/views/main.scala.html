@@ -23,7 +23,7 @@
 		</div>
 		<ul class="nav navbar-nav">
             <li @if(pagename == "Home") {class="active"}><a href="@routes.HomeController.index()">Home</a></li>
-		    <li @if(pagename == "Projects") {class="active"}><a href="@routes.HomeController.projects()">On Sale</a></li>
+		    <li @if(pagename == "Projects") {class="active"}><a href="@routes.HomeController.projects(0)">Projects</a></li>
 			<li @if(pagename == "About") {class="active"}><a href="@routes.HomeController.about()">About us</a></li>
 			<li @if(pagename == "Add an employee") {class="active"}><a href="@routes.LoginController.addEmployee()">Register user</a></li>
 			@if((user != null) && ("admin".equals(user.getRole()))) {

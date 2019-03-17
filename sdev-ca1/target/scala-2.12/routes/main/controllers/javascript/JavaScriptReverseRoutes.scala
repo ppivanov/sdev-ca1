@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Computing/sdev-ca1/sdev-ca1/sdev-ca1/conf/routes
-// @DATE:Sun Mar 17 01:55:07 GMT 2019
+// @DATE:Sun Mar 17 02:53:57 GMT 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -79,16 +79,6 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:9
-    def projects: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.projects",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "projects"})
-        }
-      """
-    )
-  
     // @LINE:23
     def usersAdmin: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.usersAdmin",
@@ -105,6 +95,16 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "about"})
+        }
+      """
+    )
+  
+    // @LINE:9
+    def projects: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.projects",
+      """
+        function(empid0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "projects/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("empid", empid0))})
         }
       """
     )
