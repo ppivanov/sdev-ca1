@@ -1,38 +1,8 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Documents/sdev/sdev-ca1/sdev-ca1/app/models/Employee.java:4:1: package javax.persistence does not exist[0m
-[0m[[0m[31merror[0m] [0m[0mimport javax.persistence.*;[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Documents/sdev/sdev-ca1/sdev-ca1/app/models/Employee.java:5:1: package io.ebean does not exist[0m
-[0m[[0m[31merror[0m] [0m[0mimport io.ebean.*;[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Documents/sdev/sdev-ca1/sdev-ca1/app/models/Employee.java:6:1: package play.data.format does not exist[0m
-[0m[[0m[31merror[0m] [0m[0mimport play.data.format.*;[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Documents/sdev/sdev-ca1/sdev-ca1/app/models/Employee.java:7:1: package play.data.validation does not exist[0m
-[0m[[0m[31merror[0m] [0m[0mimport play.data.validation.*;[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Documents/sdev/sdev-ca1/sdev-ca1/app/models/Employee.java:10:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol: class Model[0m
-[0m[[0m[31merror[0m] [0m[0mpublic class Employee extends Model {[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Documents/sdev/sdev-ca1/sdev-ca1/app/models/Employee.java:9:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol: class Entity[0m
-[0m[[0m[31merror[0m] [0m[0m@Entity[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Documents/sdev/sdev-ca1/sdev-ca1/app/models/Project.java:8:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   class Employee[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class Project[0m
-[0m[[0m[31merror[0m] [0m[0m    private List<Employee> employees; //Map to Employee table[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Documents/sdev/sdev-ca1/sdev-ca1/app/models/Project.java:37:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   class Employee[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class Project[0m
-[0m[[0m[31merror[0m] [0m[0m    public Employee getEmployees(){[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Documents/sdev/sdev-ca1/sdev-ca1/app/models/Employee.java:12:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   class Id[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class model.Employee[0m
-[0m[[0m[31merror[0m] [0m[0m    @Id[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Documents/sdev/sdev-ca1/sdev-ca1/app/models/Employee.java:15:1: package Constraints does not exist[0m
-[0m[[0m[31merror[0m] [0m[0m    @Constraints.Required[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Documents/sdev/sdev-ca1/sdev-ca1/app/models/Employee.java:18:1: package Constraints does not exist[0m
-[0m[[0m[31merror[0m] [0m[0m    @Constraints.Required[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Documents/sdev/sdev-ca1/sdev-ca1/app/models/Employee.java:36:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   variable lname[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class model.Employee[0m
-[0m[[0m[31merror[0m] [0m[0m        this.empLastName = lname;[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Documents/sdev/sdev-ca1/sdev-ca1/app/models/Project.java:18:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   class ArrayList[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class Project[0m
-[0m[[0m[31merror[0m] [0m[0m        employees = new ArrayList<>();[0m
+[0m[[0m[31merror[0m] [0m[0mD:\Computing\sdev-ca1\sdev-ca1\sdev-ca1\app\controllers\HomeController.java:52:1:  error: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m        return ok(projects.render(projects, Employee.getUserById(session().get("email"))));[0m
+[0m[[0m[31merror[0m] [0m[0m                          ^  symbol:   method render(List<Project>,Employee)[0m
+[0m[[0m[31merror[0m] [0m[0m  location: variable projects of type List<Project>[0m
+[0m[[0m[31merror[0m] [0m[0mD:\Computing\sdev-ca1\sdev-ca1\sdev-ca1\app\controllers\ProjectController.java:53:1:  error: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m                newProject.save();[0m
+[0m[[0m[31merror[0m] [0m[0m                          ^  symbol:   method save()[0m
+[0m[[0m[31merror[0m] [0m[0m  location: variable newProject of type Project[0m

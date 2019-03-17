@@ -1,0 +1,26 @@
+@(projectForm: Form[models.Project],user: models.users.Employee)
+@import helper._
+
+@main("Add Project",user){
+    <p class="lead">Add a new project</p>
+
+    @form(action=routes.ProjectController.addProjectSubmit(), 'class -> "form-horizontal", 'role -> "form",
+           'method -> "POST", 'enctype -> "multipart/form-data") {
+        @CSRF.formField
+
+           
+            @inputText(projectForm("name"), '_label -> "Name", 'class -> "form-control")
+            
+            @inputText(projectForm("description"), '_label -> "Description", 'class -> "form-control")
+            @inputText(projectForm("stock"), '_label -> "Stock", 'class -> "form-control")
+            @inputText(projectForm("price"), '_label -> "Price", 'class -> "form-control")
+
+            @inputText(projectForm("id"), '_label -> "", 'hidden -> "hidden")
+            <div class="actions">
+                <input type="submit" value="Add/Update Project" class="btn btn-primary">
+                <a href="@routes.HomeController.projects()">
+                    <button type="button" class="btn btn-warning">Cancel</button>
+                </a>
+            </div>
+    } @* end of form *@
+} @* end of main *@

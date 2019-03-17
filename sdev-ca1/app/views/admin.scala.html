@@ -1,0 +1,59 @@
+@(admins: List[models.users.Employee],user: models.users.Employee)
+@main("Administrators",user){
+    <h1>Current administrators</h1>
+
+	@if(flash.containsKey("success")) {
+		<div class="alert alert-success">
+			@flash.get("success")
+		</div>
+}
+
+    <div class="col-sm-9">
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+        <!-- The header row-->
+        <tr>
+            <th>Email</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Date of birth</th>
+            <th>Mobile number</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Product row(s) -->
+       
+            @for(a<-admins) {
+                @if(a.getRole() == "admin"){
+               <tr>
+                  <td>@a.getEmail</td>
+                  <td>@a.getEmpFirstName</td>
+                  <td>@a.getEmpLastName</td>
+                  <td>@a.getDateOfBirthString</td>
+                  <td>@a.getMobileNumber</td>
+                  <!-- Update button -->
+						<td>
+							<a href="@routes.LoginController.updateAdmin(a.getEmail)" class="button-xs btn-danger">
+								<span class="glyphicon glyphicon-pencil"></span>
+							</a>
+                        </td>
+                  <!-- Delete button -->
+						<td>
+							<a href="@routes.LoginController.deleteAdmin(a.getEmail)" class="button-xs btn-danger" onclick="return confirmDel();">
+								<span class="glyphicon glyphicon-trash"></span>
+							</a>
+                        </td>
+               </tr>
+                }
+            }
+        
+        </tbody>
+    </table>
+
+    <p>
+        <a href="@routes.LoginController.addAdmin()">
+            <button class="btn btn-primary">Add a new Administrator</button>
+        </a>
+    </p>
+</div>
+ }

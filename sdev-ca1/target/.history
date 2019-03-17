@@ -1,2 +1,12 @@
 run
 exit
+run
+co,pile
+compile
+run
+exit
+compile
+exit
+compile
+run
+exit

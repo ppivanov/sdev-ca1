@@ -1,17 +1,47 @@
-@main("Title - projects") {
-<section class="content">
-    <table>
+@(projects: List[models.Project], user: models.users.Employee)
+@main("Projects", user) {
+  <section class="content">
+    
+    <div class="col-sm-9">
+      <table class="table table-bordered table-hover table-condensed">
         <thead>
-          <th>Project #</th>
-          <th>Project Name</th>
-          <th>Description</th>
-          <th>Employees working on project</th>
+          <tr>
+            <th>Project #</th>
+            <th>Project Name</th>
+            <th>Description</th>
+          </tr>
         </thead>
-        
+        <tbody>
+          <!-- Product row(s) -->
+
+          @for(p <- projects) { <tr>
+            <td>@p.getProjectName</td>
+            <td>@p.getProjectDescription</td>
+            <td>@p.getProjectStatus</td>
+            <!-- Update button -->
+            <td>
+              <a href="@routes.ProjectController.updateProject(p.getProjectId)" class="button-xs btn-danger">
+                <span class="glyphicon glyphicon-pencil"></span>
+              </a>
+            </td>
+            <!-- Delete button -->
+            <td>
+              <a href="@routes.ProjectController.deleteProject(p.getProjectId)" class="button-xs btn-danger"
+                onclick="return confirmDel();">
+                <span class="glyphicon glyphicon-trash"></span>
+              </a>
+            </td>
+            </tr>
+            }
+
+        </tbody>
       </table>
-    <aside>
-      @commonSidebar()
-    </aside>
-</section>
+
+      <p>
+        <a href="@routes.ProjectController.addProject()">
+          <button class="btn btn-primary">Add a new project</button>
+        </a>
+      </p>
+  </section>
 
 }
