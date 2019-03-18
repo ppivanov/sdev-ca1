@@ -59,10 +59,10 @@ Seq[Any](_display_(/*2.2*/main("Employees", user)/*2.25*/{_display_(Seq[Any](for
             """),_display_(/*28.14*/for(e <- employees) yield /*28.33*/ {_display_(Seq[Any](format.raw/*28.35*/("""
                 """),_display_(/*29.18*/if(e.getRole() != "admin")/*29.44*/{_display_(Seq[Any](format.raw/*29.45*/("""
                """),format.raw/*30.16*/("""<tr>
-                    """),_display_(/*31.22*/if(env.resource("public/images/productImages/" + e.getId + "thumb.jpg").isDefined)/*31.104*/ {_display_(Seq[Any](format.raw/*31.106*/("""
-                        """),format.raw/*32.25*/("""<td><img src="/assets/images/productImages/"""),_display_(/*32.69*/(e.getId + "thumb.jpg")),format.raw/*32.92*/(""""/></td>
+                    """),_display_(/*31.22*/if(env.resource("public/images/profileImages/" + e.getId + "thumb.jpg").isDefined)/*31.104*/ {_display_(Seq[Any](format.raw/*31.106*/("""
+                        """),format.raw/*32.25*/("""<td><img src="/assets/images/profileImages/"""),_display_(/*32.69*/(e.getId + "thumb.jpg")),format.raw/*32.92*/(""""/></td>
                     """)))}/*33.23*/else/*33.28*/{_display_(Seq[Any](format.raw/*33.29*/("""
-                        """),format.raw/*34.25*/("""<td><img src="/assets/images/productImages/noImage.jpg"/></td>
+                        """),format.raw/*34.25*/("""<td><img src="/assets/images/profileImages/noImage.jpg"/></td>
                     """)))}),format.raw/*35.22*/("""
                   """),format.raw/*36.19*/("""<td>"""),_display_(/*36.24*/e/*36.25*/.getEmail),format.raw/*36.34*/("""</td>
                   <td>"""),_display_(/*37.24*/e/*37.25*/.getEmpFirstName),format.raw/*37.41*/("""</td>
@@ -111,9 +111,9 @@ Seq[Any](_display_(/*2.2*/main("Employees", user)/*2.25*/{_display_(Seq[Any](for
 
               /*
                   -- GENERATED --
-                  DATE: Mon Mar 18 15:37:08 GMT 2019
+                  DATE: Mon Mar 18 18:26:49 GMT 2019
                   SOURCE: D:/Computing/sdev-ca1/sdev-ca1/sdev-ca1/app/views/employees.scala.html
-                  HASH: 249a8a20d0349f1a0a3d0b0ba3c1637413d81377
+                  HASH: 070584cc74726749d0459cb155c78215102d6b03
                   MATRIX: 1040->1|1268->137|1299->160|1337->161|1368->166|1423->196|1463->228|1502->230|1531->233|1594->271|1607->276|1642->291|1671->294|1708->302|1740->307|2256->796|2291->815|2331->817|2376->835|2411->861|2450->862|2494->878|2547->904|2639->986|2680->988|2733->1013|2804->1057|2848->1080|2897->1111|2910->1116|2949->1117|3002->1142|3117->1226|3164->1245|3196->1250|3206->1251|3236->1260|3292->1289|3302->1290|3339->1306|3395->1335|3405->1336|3441->1351|3497->1380|3507->1381|3549->1402|3605->1431|3615->1432|3652->1448|3708->1477|3718->1478|3761->1500|3863->1575|3878->1581|3942->1624|4169->1824|4184->1830|4248->1873|4478->2072|4523->2086|4568->2104|4644->2153|4659->2159|4710->2189
                   LINES: 28->1|33->2|33->2|33->2|34->3|36->5|36->5|36->5|37->6|38->7|38->7|38->7|39->8|40->9|42->11|59->28|59->28|59->28|60->29|60->29|60->29|61->30|62->31|62->31|62->31|63->32|63->32|63->32|64->33|64->33|64->33|65->34|66->35|67->36|67->36|67->36|67->36|68->37|68->37|68->37|69->38|69->38|69->38|70->39|70->39|70->39|71->40|71->40|71->40|72->41|72->41|72->41|75->44|75->44|75->44|81->50|81->50|81->50|86->55|87->56|89->58|93->62|93->62|93->62
                   -- GENERATED --

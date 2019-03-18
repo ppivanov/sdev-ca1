@@ -11,6 +11,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;  
 import java.util.Date;
 
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
 @Entity
 public class Employee extends Model {
 
@@ -165,6 +168,32 @@ public class Employee extends Model {
 
     public static Employee authenticate(String email, String password) {
         return find.query().where().eq("email", email).eq("password", password).findUnique();
+    }
+
+    public boolean emailCheck(){
+        boolean result = false;
+        Pattern pattern = Pattern.compile("^.+@.+\\..+$");
+        Matcher matcher = pattern.matcher(email);
+        if(matcher.find()){
+            result = true;
+        }
+        return result;
+    }
+
+    public static Map<String,String> options() {
+    LinkedHashMap<String,String> options = new LinkedHashMap();
+ 
+    // Get all the categories from the database and add them to the options hash map
+    for (Employee e: Employee.findAll()) {
+       options.put(e.getId().toString(), e.getEmpFirstName() + " " + e.getEmpLastName());
+    }
+    return options;
+    }
+
+    public static boolean inProject(Long employee, Long project) {
+        return find.query().where().eq("project.id", project)
+                       .eq("id", employee)
+                       .findList().size() > 0;
     }
     
 }

@@ -15,6 +15,16 @@
             @inputText(projectForm("stock"), '_label -> "Stock", 'class -> "form-control")
             @inputText(projectForm("price"), '_label -> "Price", 'class -> "form-control")
 
+            @for((value, name) <- users.Employee.options) {
+                <input type="checkbox" name="empSelect[]" value="@value"  
+                    @if(projectForm("id").getValue.isPresent && projectForm("id").getValue.get != "") { 
+                        @if(users.Employee.inProject(value.toLong, projectForm("id").getValue.get.toLong)) {
+                            checked
+                        }
+                    } 
+                /> @name </br>
+              }
+
             @inputText(projectForm("id"), '_label -> "", 'hidden -> "hidden")
             <div class="actions">
                 <input type="submit" value="Add/Update Project" class="btn btn-primary">

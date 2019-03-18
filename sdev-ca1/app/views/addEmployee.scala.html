@@ -12,7 +12,8 @@
 
     <p class="lead">Add a new employee</p>
 
-    @form(action=routes.LoginController.addEmployeeSubmit(), 'class -> "form-horizontal", 'role -> "form") {
+    @form(action=routes.LoginController.addEmployeeSubmit(),'class -> "form-horizontal", 'role -> "form",
+    'method -> "POST", 'enctype -> "multipart/form-data") {
         @CSRF.formField
 
             @inputText(userForm("email"), '_label -> "Email", 'class -> "form-control")
@@ -37,6 +38,7 @@
 
             @inputText(userForm("role").copy(value=Some("employee")), '_label -> "",'hidden -> "hidden")
             @inputText(userForm("id"), '_label -> "", 'hidden -> "hidden")
+            @inputText(addressForm("id"), '_label -> "", 'hidden -> "hidden")
             <label>Upload profile picture</label>
             <input class="btn-sm btn-default" type="file" name="upload">    
 

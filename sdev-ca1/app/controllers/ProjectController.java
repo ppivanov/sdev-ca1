@@ -84,4 +84,14 @@ public class ProjectController extends Controller {
         flash("success", "Project has been deleted.");
         return redirect(controllers.routes.HomeController.index()); //redirect to projects page
     }
+
+    public Result showMyProjects() {
+        List<Project> myProjects = null;
+        if(Employee.getUserById(session().get("email")) != null){
+            myProjects = Employee.getUserById(session().get("email")).getProjects();
+        } else {
+            myProjects = Project.findAll();
+        }
+        return ok(projects.render(myProjects, Employee.getUserById(session().get("email"))));
+    }
 }

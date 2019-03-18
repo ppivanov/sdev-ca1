@@ -56,5 +56,5 @@ public class Department extends Model{
             options.put(d.getId().toString(), d.getName());
         }
         return options;
-}
+    }
 }

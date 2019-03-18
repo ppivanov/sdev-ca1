@@ -28,10 +28,10 @@
             @for(e <- employees) {
                 @if(e.getRole() != "admin"){
                <tr>
-                    @if(env.resource("public/images/productImages/" + e.getId + "thumb.jpg").isDefined) {
-                        <td><img src="/assets/images/productImages/@(e.getId + "thumb.jpg")"/></td>
+                    @if(env.resource("public/images/profileImages/" + e.getId + "thumb.jpg").isDefined) {
+                        <td><img src="/assets/images/profileImages/@(e.getId + "thumb.jpg")"/></td>
                     } else {
-                        <td><img src="/assets/images/productImages/noImage.jpg"/></td>
+                        <td><img src="/assets/images/profileImages/noImage.jpg"/></td>
                     }
                   <td>@e.getEmail</td>
                   <td>@e.getEmpFirstName</td>

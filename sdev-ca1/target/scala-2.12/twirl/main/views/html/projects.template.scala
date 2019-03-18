@@ -50,31 +50,41 @@ Seq[Any](format.raw/*1.63*/("""
             <td>"""),_display_(/*18.18*/p/*18.19*/.getProjectName),format.raw/*18.34*/("""</td>
             <td>"""),_display_(/*19.18*/p/*19.19*/.getProjectDescription),format.raw/*19.41*/("""</td>
             <td>"""),_display_(/*20.18*/p/*20.19*/.getProjectStatus),format.raw/*20.36*/("""</td>
+            
             <!-- Update button -->
             <td>
-              <a href=""""),_display_(/*23.25*/routes/*23.31*/.ProjectController.updateProject(p.getProjectId)),format.raw/*23.79*/("""" class="button-xs btn-danger">
+              <a href=""""),_display_(/*24.25*/routes/*24.31*/.ProjectController.updateProject(p.getProjectId)),format.raw/*24.79*/("""" class="button-xs btn-danger">
                 <span class="glyphicon glyphicon-pencil"></span>
               </a>
             </td>
             <!-- Delete button -->
             <td>
-              <a href=""""),_display_(/*29.25*/routes/*29.31*/.ProjectController.deleteProject(p.getProjectId)),format.raw/*29.79*/("""" class="button-xs btn-danger"
+              <a href=""""),_display_(/*30.25*/routes/*30.31*/.ProjectController.deleteProject(p.getProjectId)),format.raw/*30.79*/("""" class="button-xs btn-danger"
                 onclick="return confirmDel();">
                 <span class="glyphicon glyphicon-trash"></span>
               </a>
             </td>
             </tr>
-            """)))}),format.raw/*35.14*/("""
+          """)))}),format.raw/*36.12*/("""
 
-        """),format.raw/*37.9*/("""</tbody>
+        """),format.raw/*38.9*/("""</tbody>
       </table>
 
       <p>
-        <a href=""""),_display_(/*41.19*/routes/*41.25*/.ProjectController.addProject()),format.raw/*41.56*/("""">
+        <a href=""""),_display_(/*42.19*/routes/*42.25*/.ProjectController.addProject()),format.raw/*42.56*/("""">
           <button class="btn btn-primary">Add a new project</button>
         </a>
       </p>
-  </section>
+
+      """),_display_(/*47.8*/if(user != null)/*47.24*/ {_display_(Seq[Any](format.raw/*47.26*/("""
+        """),format.raw/*48.9*/("""<p>
+            <a href=""""),_display_(/*49.23*/routes/*49.29*/.ProjectController.showMyProjects()),format.raw/*49.64*/("""">
+              <button class="btn btn-primary">Show my projects</button>
+            </a>
+        </p>
+      """)))}),format.raw/*53.8*/("""
+      
+  """),format.raw/*55.3*/("""</section>
 
 """)))}))
       }
@@ -92,11 +102,11 @@ Seq[Any](format.raw/*1.63*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Mar 17 14:43:42 GMT 2019
+                  DATE: Mon Mar 18 20:58:29 GMT 2019
                   SOURCE: D:/Computing/sdev-ca1/sdev-ca1/sdev-ca1/app/views/projects.scala.html
-                  HASH: dfd3db0c673fc860cbae7bd5bf48e4f5db2db268
-                  MATRIX: 987->1|1143->62|1171->65|1201->87|1240->89|1270->93|1664->460|1698->478|1738->480|1767->481|1817->504|1827->505|1863->520|1914->544|1924->545|1967->567|2018->591|2028->592|2066->609|2178->694|2193->700|2262->748|2505->964|2520->970|2589->1018|2837->1235|2876->1247|2960->1304|2975->1310|3027->1341
-                  LINES: 28->1|33->1|34->2|34->2|34->2|35->3|49->17|49->17|49->17|49->17|50->18|50->18|50->18|51->19|51->19|51->19|52->20|52->20|52->20|55->23|55->23|55->23|61->29|61->29|61->29|67->35|69->37|73->41|73->41|73->41
+                  HASH: f67f0a10b8a51e2238f33b44d431e3fe66da997d
+                  MATRIX: 987->1|1143->62|1171->65|1201->87|1240->89|1270->93|1664->460|1698->478|1738->480|1767->481|1817->504|1827->505|1863->520|1914->544|1924->545|1967->567|2018->591|2028->592|2066->609|2192->708|2207->714|2276->762|2519->978|2534->984|2603->1032|2849->1247|2888->1259|2972->1316|2987->1322|3039->1353|3174->1462|3199->1478|3239->1480|3276->1490|3330->1517|3345->1523|3401->1558|3547->1674|3586->1686
+                  LINES: 28->1|33->1|34->2|34->2|34->2|35->3|49->17|49->17|49->17|49->17|50->18|50->18|50->18|51->19|51->19|51->19|52->20|52->20|52->20|56->24|56->24|56->24|62->30|62->30|62->30|68->36|70->38|74->42|74->42|74->42|79->47|79->47|79->47|80->48|81->49|81->49|81->49|85->53|87->55
                   -- GENERATED --
               */
           

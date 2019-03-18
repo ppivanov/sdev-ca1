@@ -69,6 +69,8 @@ public class LoginController extends Controller {
     public Result addEmployeeSubmit() {
     Form<Employee> newEmpForm = formFactory.form(Employee.class).bindFromRequest();
     Form<Address> newAddressForm = formFactory.form(Address.class).bindFromRequest();
+    // MultipartFormData<File> data = request().body().asMultipartFormData();
+    // FilePart<File> image = data.getFile("upload");
     if (newEmpForm.hasErrors() || newAddressForm.hasErrors()) {
         flash("error","Please fill in all the fieds!");
         return badRequest(addEmployee.render(newEmpForm, newAddressForm, Employee.getUserById(session().get("email"))));
@@ -77,13 +79,18 @@ public class LoginController extends Controller {
         Address address = newAddressForm.get();
         newEmp.setAddress(address);
         
-        if(newEmp.getEmail()==null){
-            newEmp.save();
-            flash("success", "Employee " + newEmp.getEmpFirstName() + " " + newEmp.getEmpLastName() + " was added.");
+        if(Employee.getUserById(newEmp.getEmail())==null){
+            if(newEmp.emailCheck()){
+                newEmp.save();
+                flash("success", "Employee " + newEmp.getEmpFirstName() + " " + newEmp.getEmpLastName() + " was added.");
+            } else {
+                flash("error", "Wrong email format! Please try again!");
+            }
         } else {
             newEmp.update();
             flash("success", "Employee " + newEmp.getEmpFirstName() + " " + newEmp.getEmpLastName() + " was updated.");
         }
+        // String saveImageMessage = saveFile(newEmp.getEmail(), image);
         return redirect(controllers.routes.HomeController.usersEmployee()); 
         }
     }
@@ -166,7 +173,7 @@ public class LoginController extends Controller {
         Employee e = Employee.getUserById(email);
         e.delete();
 
-        flash("success", "Employee has been deleted.");
+        flash("success", "Employee" + e.getEmpFirstName() + "has been deleted.");
         return redirect(controllers.routes.HomeController.usersEmployee());
     }
 
@@ -197,23 +204,25 @@ public class LoginController extends Controller {
             String mimeType = uploaded.getContentType();
             if (mimeType.startsWith("image/")) {
                 String fileName = uploaded.getFilename();
-                String extension = "";
-                int i = fileName.lastIndexOf('.');
-                if (i >= 0) {
-                    extension = fileName.substring(i + 1);
-                }
+                // String extension = "";
+                // int i = fileName.lastIndexOf('.');
+                // if (i >= 0) {
+                //     extension = fileName.substring(i + 1);
+                // }
                 File file = uploaded.getFile();
-                File dir = new File("public/images/productImages");
+                File dir = new File("public/images/profileImages");
                 if (!dir.exists()) {
                     dir.mkdirs();
                 }
-                File newFile = new File("public/images/productImages/", id + "." + extension);
+                // File newFile = new File("public/images/productImages/", id + "." + extension);
+                File newFile = new File("public/images/profileImages/", id + ".jpg");
+
                 if (file.renameTo(newFile)) {
                     try {
                         BufferedImage img = ImageIO.read(newFile); 
                         BufferedImage scaledImg = Scalr.resize(img, 90);
                         
-                        if (ImageIO.write(scaledImg, extension, new File("public/images/productImages/", id + "thumb.jpg"))) {
+                        if (ImageIO.write(scaledImg, "jpg", new File("public/images/profileImages/", id + "thumb.jpg"))) {
                             return "/ file uploaded and thumbnail created.";
                         } else {
                             return "/ file uploaded but thumbnail creation failed.";

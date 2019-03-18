@@ -18,6 +18,7 @@
             <td>@p.getProjectName</td>
             <td>@p.getProjectDescription</td>
             <td>@p.getProjectStatus</td>
+            
             <!-- Update button -->
             <td>
               <a href="@routes.ProjectController.updateProject(p.getProjectId)" class="button-xs btn-danger">
@@ -32,7 +33,7 @@
               </a>
             </td>
             </tr>
-            }
+          }
 
         </tbody>
       </table>
@@ -42,6 +43,15 @@
           <button class="btn btn-primary">Add a new project</button>
         </a>
       </p>
+
+      @if(user != null) {
+        <p>
+            <a href="@routes.ProjectController.showMyProjects()">
+              <button class="btn btn-primary">Show my projects</button>
+            </a>
+        </p>
+      }
+      
   </section>
 
 }

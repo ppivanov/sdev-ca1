@@ -59,10 +59,10 @@ Seq[Any](_display_(/*2.2*/main("Administrators", user)/*2.30*/{_display_(Seq[Any
             """),_display_(/*28.14*/for(a<-admins) yield /*28.28*/ {_display_(Seq[Any](format.raw/*28.30*/("""
                 """),_display_(/*29.18*/if(a.getRole() == "admin")/*29.44*/{_display_(Seq[Any](format.raw/*29.45*/("""
                """),format.raw/*30.16*/("""<tr>
-                    """),_display_(/*31.22*/if(env.resource("public/images/productImages/" + a.getId + "thumb.jpg").isDefined)/*31.104*/ {_display_(Seq[Any](format.raw/*31.106*/("""
-                        """),format.raw/*32.25*/("""<td><img src="/assets/images/productImages/"""),_display_(/*32.69*/(a.getId + "thumb.jpg")),format.raw/*32.92*/(""""/></td>
+                    """),_display_(/*31.22*/if(env.resource("public/images/profileImages/" + a.getId + "thumb.jpg").isDefined)/*31.104*/ {_display_(Seq[Any](format.raw/*31.106*/("""
+                        """),format.raw/*32.25*/("""<td><img src="/assets/images/profileImages/"""),_display_(/*32.69*/(a.getId + "thumb.jpg")),format.raw/*32.92*/(""""/></td>
                     """)))}/*33.23*/else/*33.28*/{_display_(Seq[Any](format.raw/*33.29*/("""
-                        """),format.raw/*34.25*/("""<td><img src="/assets/images/productImages/noImage.jpg"/></td>
+                        """),format.raw/*34.25*/("""<td><img src="/assets/images/profileImages/noImage.jpg"/></td>
                     """)))}),format.raw/*35.22*/("""
                   """),format.raw/*36.19*/("""<td>"""),_display_(/*36.24*/a/*36.25*/.getEmail),format.raw/*36.34*/("""</td>
                   <td>"""),_display_(/*37.24*/a/*37.25*/.getEmpFirstName),format.raw/*37.41*/("""</td>
@@ -111,9 +111,9 @@ Seq[Any](_display_(/*2.2*/main("Administrators", user)/*2.30*/{_display_(Seq[Any
 
               /*
                   -- GENERATED --
-                  DATE: Mon Mar 18 14:07:56 GMT 2019
+                  DATE: Mon Mar 18 18:26:49 GMT 2019
                   SOURCE: D:/Computing/sdev-ca1/sdev-ca1/sdev-ca1/app/views/admin.scala.html
-                  HASH: d810d3d2643428f2f5ef7fed4fef468455301cc0
+                  HASH: a0137e1ab03508a4292c5672e638805168b79c59
                   MATRIX: 1036->1|1261->134|1297->162|1335->163|1366->168|1426->203|1466->235|1505->237|1534->240|1597->278|1610->283|1645->298|1674->301|1711->309|1744->315|2260->804|2290->818|2330->820|2375->838|2410->864|2449->865|2493->881|2546->907|2638->989|2679->991|2732->1016|2803->1060|2847->1083|2896->1114|2909->1119|2948->1120|3001->1145|3116->1229|3163->1248|3195->1253|3205->1254|3235->1263|3291->1292|3301->1293|3338->1309|3394->1338|3404->1339|3440->1354|3496->1383|3506->1384|3548->1405|3604->1434|3614->1435|3651->1451|3707->1480|3717->1481|3760->1503|3862->1578|3877->1584|3938->1624|4165->1824|4180->1830|4241->1870|4471->2069|4516->2083|4561->2101|4637->2150|4652->2156|4700->2183
                   LINES: 28->1|33->2|33->2|33->2|34->3|36->5|36->5|36->5|37->6|38->7|38->7|38->7|39->8|40->9|42->11|59->28|59->28|59->28|60->29|60->29|60->29|61->30|62->31|62->31|62->31|63->32|63->32|63->32|64->33|64->33|64->33|65->34|66->35|67->36|67->36|67->36|67->36|68->37|68->37|68->37|69->38|69->38|69->38|70->39|70->39|70->39|71->40|71->40|71->40|72->41|72->41|72->41|75->44|75->44|75->44|81->50|81->50|81->50|86->55|87->56|89->58|93->62|93->62|93->62
                   -- GENERATED --
