@@ -4,10 +4,10 @@
 	<info
 		organisation="sdev-ca1"
 		module="sdev-ca1_2.12"
-		revision="0.1.0-SNAPSHOT"
+		revision="1.0-SNAPSHOT"
 		conf="docs"
 		confs="compile, runtime, test, provided, optional, universal, universal-docs, universal-src, windows, docker, linux, rpm, debian, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool, docs"
-		date="20190317144333"/>
+		date="20190318151752"/>
 	<dependencies>
 		<module organisation="org.scala-lang" name="scala-reflect">
 			<revision name="2.12.8" status="release" pubdate="20181204021524" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.12.8/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="32">
@@ -59,7 +59,7 @@
 			<revision name="2.6.20" status="release" pubdate="20181008111001" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/playframework/omnidoc" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="0">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="2860" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\play-omnidoc_2.12\ivy-2.6.20.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/play/play-omnidoc_2.12/2.6.20/play-omnidoc_2.12-2.6.20.pom"/>
-				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="docs" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="0.1.0-SNAPSHOT"/>
+				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="docs" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
 					<artifact name="play-omnidoc_2.12" type="jar" ext="jar" status="no" details="" size="14880831" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\play-omnidoc_2.12\jars\play-omnidoc_2.12-2.6.20.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/play/play-omnidoc_2.12/2.6.20/play-omnidoc_2.12-2.6.20.jar"/>

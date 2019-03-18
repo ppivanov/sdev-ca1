@@ -36,7 +36,7 @@
             @inputText(addressForm("postCode"), '_label -> "Postcode", 'class -> "form-control")
 
             @inputText(userForm("role").copy(value=Some("employee")), '_label -> "",'hidden -> "hidden")
-            
+            @inputText(userForm("id"), '_label -> "", 'hidden -> "hidden")
             <label>Upload profile picture</label>
             <input class="btn-sm btn-default" type="file" name="upload">    
 

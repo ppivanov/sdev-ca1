@@ -77,7 +77,7 @@ public class LoginController extends Controller {
         Address address = newAddressForm.get();
         newEmp.setAddress(address);
         
-        if(Employee.getUserById(newEmp.getEmail())==null){
+        if(newEmp.getEmail()==null){
             newEmp.save();
             flash("success", "Employee " + newEmp.getEmpFirstName() + " " + newEmp.getEmpLastName() + " was added.");
         } else {
@@ -151,8 +151,8 @@ public class LoginController extends Controller {
             flash("success", "Administrator " + newEmp.getEmpFirstName() + " " + newEmp.getEmpLastName() + " was updated.");
         }
         MultipartFormData<File> data = request().body().asMultipartFormData();
-        FilePart<File> image = data.getFile("upload");
-        String saveImageMessage = saveFile(newEmp.getId(), image);
+        FilePart<File> image = data.getFile("upload"); 
+        // String saveImageMessage = saveFile(newEmp.getId(), image);
         
         return redirect(controllers.routes.HomeController.usersAdmin()); 
         }

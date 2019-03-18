@@ -4,16 +4,16 @@
 	<info
 		organisation="sdev-ca1"
 		module="sdev-ca1_2.12"
-		revision="0.1.0-SNAPSHOT"
+		revision="1.0-SNAPSHOT"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, universal, universal-docs, universal-src, windows, docker, linux, rpm, debian, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool, docs"
-		date="20190317144333"/>
+		date="20190318151752"/>
 	<dependencies>
 		<module organisation="org.imgscalr" name="imgscalr-lib">
 			<revision name="4.2" status="release" pubdate="20120111195930" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.thebuzzmedia.com/software/imgscalr-java-image-scaling-library/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="87">
 				<license name="ASF 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="3337" time="0" location="C:\Users\noima\.ivy2\cache\org.imgscalr\imgscalr-lib\ivy-4.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/imgscalr/imgscalr-lib/4.2/imgscalr-lib-4.2.pom"/>
-				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="4.2" rev-constraint-default="4.2" rev-constraint-dynamic="4.2" callerrev="0.1.0-SNAPSHOT"/>
+				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="4.2" rev-constraint-default="4.2" rev-constraint-dynamic="4.2" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
 					<artifact name="imgscalr-lib" type="jar" ext="jar" status="no" details="" size="27893" time="0" location="C:\Users\noima\.ivy2\cache\org.imgscalr\imgscalr-lib\jars\imgscalr-lib-4.2.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/imgscalr/imgscalr-lib/4.2/imgscalr-lib-4.2.jar"/>
@@ -25,7 +25,7 @@
 			<revision name="2.6.20" status="release" pubdate="20181008082307" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" extra-info.apiURL="https://www.playframework.com/documentation/2.6.20/api/scala/index.html" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="80">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="4034" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\play-akka-http-server_2.12\ivy-2.6.20.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/play/play-akka-http-server_2.12/2.6.20/play-akka-http-server_2.12-2.6.20.pom"/>
-				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="0.1.0-SNAPSHOT"/>
+				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
 					<artifact name="play-akka-http-server_2.12" type="jar" ext="jar" status="no" details="" size="103864" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\play-akka-http-server_2.12\jars\play-akka-http-server_2.12-2.6.20.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/play/play-akka-http-server_2.12/2.6.20/play-akka-http-server_2.12-2.6.20.jar"/>
@@ -61,7 +61,7 @@
 			<revision name="2.6.20" status="release" pubdate="20181008082440" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" extra-info.apiURL="https://www.playframework.com/documentation/2.6.20/api/scala/index.html" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="77">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="3341" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\play-logback_2.12\ivy-2.6.20.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/play/play-logback_2.12/2.6.20/play-logback_2.12-2.6.20.pom"/>
-				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="0.1.0-SNAPSHOT"/>
+				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
 					<artifact name="play-logback_2.12" type="jar" ext="jar" status="no" details="" size="10772" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\play-logback_2.12\jars\play-logback_2.12-2.6.20.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/play/play-logback_2.12/2.6.20/play-logback_2.12-2.6.20.jar"/>
@@ -73,7 +73,7 @@
 			<revision name="2.6.20" status="release" pubdate="20181008082631" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" extra-info.apiURL="https://www.playframework.com/documentation/2.6.20/api/scala/index.html" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="76">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="3590" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\filters-helpers_2.12\ivy-2.6.20.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/play/filters-helpers_2.12/2.6.20/filters-helpers_2.12-2.6.20.pom"/>
-				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="0.1.0-SNAPSHOT"/>
+				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
 					<artifact name="filters-helpers_2.12" type="jar" ext="jar" status="no" details="" size="276727" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\filters-helpers_2.12\jars\filters-helpers_2.12-2.6.20.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/play/filters-helpers_2.12/2.6.20/filters-helpers_2.12-2.6.20.jar"/>
@@ -85,7 +85,7 @@
 			<revision name="2.6.20" status="release" pubdate="20181008082529" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" extra-info.apiURL="https://www.playframework.com/documentation/2.6.20/api/scala/index.html" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="67">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="6292" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\play-java-forms_2.12\ivy-2.6.20.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/play/play-java-forms_2.12/2.6.20/play-java-forms_2.12-2.6.20.pom"/>
-				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="0.1.0-SNAPSHOT"/>
+				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
 					<artifact name="play-java-forms_2.12" type="jar" ext="jar" status="no" details="" size="73529" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\play-java-forms_2.12\jars\play-java-forms_2.12-2.6.20.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/play/play-java-forms_2.12/2.6.20/play-java-forms_2.12-2.6.20.jar"/>
@@ -190,8 +190,8 @@
 			<revision name="2.6.20" status="release" pubdate="20181008082332" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" extra-info.apiURL="https://www.playframework.com/documentation/2.6.20/api/scala/index.html" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="66">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="3801" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\play-server_2.12\ivy-2.6.20.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/play/play-server_2.12/2.6.20/play-server_2.12-2.6.20.pom"/>
-				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="0.1.0-SNAPSHOT"/>
 				<caller organisation="com.typesafe.play" name="play-akka-http-server_2.12" conf="default, compile, runtime, master" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="2.6.20"/>
+				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
 					<artifact name="play-server_2.12" type="jar" ext="jar" status="no" details="" size="221291" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\play-server_2.12\jars\play-server_2.12-2.6.20.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/play/play-server_2.12/2.6.20/play-server_2.12-2.6.20.jar"/>
@@ -203,7 +203,7 @@
 			<revision name="2.6.20" status="release" pubdate="20181008082411" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" extra-info.apiURL="https://www.playframework.com/documentation/2.6.20/api/scala/index.html" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="83">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="3861" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\play-guice_2.12\ivy-2.6.20.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/play/play-guice_2.12/2.6.20/play-guice_2.12-2.6.20.pom"/>
-				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="0.1.0-SNAPSHOT"/>
+				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
 					<artifact name="play-guice_2.12" type="jar" ext="jar" status="no" details="" size="90613" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\play-guice_2.12\jars\play-guice_2.12-2.6.20.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/play/play-guice_2.12/2.6.20/play-guice_2.12-2.6.20.jar"/>
@@ -252,7 +252,7 @@
 			<revision name="2.6.20" status="release" pubdate="20181008082620" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" extra-info.apiURL="https://www.playframework.com/documentation/2.6.20/api/scala/index.html" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master, runtime(*), master(compile), compile(*)" position="65">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="3610" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\play-jdbc-evolutions_2.12\ivy-2.6.20.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/play/play-jdbc-evolutions_2.12/2.6.20/play-jdbc-evolutions_2.12-2.6.20.pom"/>
-				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="0.1.0-SNAPSHOT"/>
+				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="1.0-SNAPSHOT"/>
 				<caller organisation="com.typesafe.play" name="play-ebean_2.12" conf="default, compile, runtime, master" rev="2.6.6" rev-constraint-default="2.6.6" rev-constraint-dynamic="2.6.6" callerrev="4.0.6"/>
 				<artifacts>
 					<artifact name="play-jdbc-evolutions_2.12" type="jar" ext="jar" status="no" details="" size="120818" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\play-jdbc-evolutions_2.12\jars\play-jdbc-evolutions_2.12-2.6.20.jar">
@@ -262,7 +262,7 @@
 			</revision>
 			<revision name="2.6.6" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master, default(compile)" position="-1">
 				<evicted-by rev="2.6.20"/>
-				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="0.1.0-SNAPSHOT"/>
+				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="1.0-SNAPSHOT"/>
 				<caller organisation="com.typesafe.play" name="play-ebean_2.12" conf="default, compile, runtime, master" rev="2.6.6" rev-constraint-default="2.6.6" rev-constraint-dynamic="2.6.6" callerrev="4.0.6"/>
 				<artifacts>
 				</artifacts>
@@ -285,8 +285,8 @@
 			<revision name="2.6.20" status="release" pubdate="20181008082431" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" extra-info.apiURL="https://www.playframework.com/documentation/2.6.20/api/scala/index.html" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master, runtime(*), master(compile), compile(*)" position="21">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="4487" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\play-jdbc_2.12\ivy-2.6.20.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/play/play-jdbc_2.12/2.6.20/play-jdbc_2.12-2.6.20.pom"/>
-				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="0.1.0-SNAPSHOT"/>
 				<caller organisation="com.typesafe.play" name="play-java-jdbc_2.12" conf="compile, runtime" rev="2.6.6" rev-constraint-default="2.6.6" rev-constraint-dynamic="2.6.6" callerrev="2.6.6"/>
+				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
 					<artifact name="play-jdbc_2.12" type="jar" ext="jar" status="no" details="" size="66580" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\play-jdbc_2.12\jars\play-jdbc_2.12-2.6.20.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/play/play-jdbc_2.12/2.6.20/play-jdbc_2.12-2.6.20.jar"/>
@@ -295,8 +295,8 @@
 			</revision>
 			<revision name="2.6.6" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master, default(compile)" position="-1">
 				<evicted-by rev="2.6.20"/>
-				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="0.1.0-SNAPSHOT"/>
 				<caller organisation="com.typesafe.play" name="play-java-jdbc_2.12" conf="compile, runtime" rev="2.6.6" rev-constraint-default="2.6.6" rev-constraint-dynamic="2.6.6" callerrev="2.6.6"/>
+				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="2.6.20" rev-constraint-default="2.6.20" rev-constraint-dynamic="2.6.20" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
 				</artifacts>
 			</revision>
@@ -722,8 +722,8 @@
 			<revision name="1.4.197" status="release" pubdate="20180318132844" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.h2database.com" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master, runtime(*), master(compile), compile(*)" position="16">
 				<license name="MPL 2.0 or EPL 1.0" url="http://h2database.com/html/license.html"/>
 				<metadata-artifact status="no" details="" size="2484" time="0" location="C:\Users\noima\.ivy2\cache\com.h2database\h2\ivy-1.4.197.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/h2database/h2/1.4.197/h2-1.4.197.pom"/>
-				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="1.4.197" rev-constraint-default="1.4.197" rev-constraint-dynamic="1.4.197" callerrev="0.1.0-SNAPSHOT"/>
 				<caller organisation="io.ebean" name="ebean-dbmigration" conf="compile, runtime" rev="1.4.193" rev-constraint-default="1.4.193" rev-constraint-dynamic="1.4.193" callerrev="10.1.10"/>
+				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="1.4.197" rev-constraint-default="1.4.197" rev-constraint-dynamic="1.4.197" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
 					<artifact name="h2" type="jar" ext="jar" status="no" details="" size="1927540" time="0" location="C:\Users\noima\.ivy2\cache\com.h2database\h2\jars\h2-1.4.197.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/h2database/h2/1.4.197/h2-1.4.197.jar"/>
@@ -732,8 +732,8 @@
 			</revision>
 			<revision name="1.4.193" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master, default(compile)" position="-1">
 				<evicted-by rev="1.4.197"/>
-				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="1.4.197" rev-constraint-default="1.4.197" rev-constraint-dynamic="1.4.197" callerrev="0.1.0-SNAPSHOT"/>
 				<caller organisation="io.ebean" name="ebean-dbmigration" conf="compile, runtime" rev="1.4.193" rev-constraint-default="1.4.193" rev-constraint-dynamic="1.4.193" callerrev="10.1.10"/>
+				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="1.4.197" rev-constraint-default="1.4.197" rev-constraint-dynamic="1.4.197" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
 				</artifacts>
 			</revision>
@@ -814,7 +814,7 @@
 			<revision name="4.0.6" status="release" pubdate="20171011130421" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/playframework/play-ebean" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="5">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="3687" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\play-ebean_2.12\ivy-4.0.6.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/play/play-ebean_2.12/4.0.6/play-ebean_2.12-4.0.6.pom"/>
-				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="4.0.6" rev-constraint-default="4.0.6" rev-constraint-dynamic="4.0.6" callerrev="0.1.0-SNAPSHOT"/>
+				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="4.0.6" rev-constraint-default="4.0.6" rev-constraint-dynamic="4.0.6" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
 					<artifact name="play-ebean_2.12" type="jar" ext="jar" status="no" details="" size="13007" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\play-ebean_2.12\jars\play-ebean_2.12-4.0.6.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/play/play-ebean_2.12/4.0.6/play-ebean_2.12-4.0.6.jar"/>
@@ -1245,8 +1245,8 @@
 			<revision name="1.3.15" status="release" pubdate="20180312130558" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/playframework/twirl" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="3">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="2980" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\twirl-api_2.12\ivy-1.3.15.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/play/twirl-api_2.12/1.3.15/twirl-api_2.12-1.3.15.pom"/>
-				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="1.3.15" rev-constraint-default="1.3.15" rev-constraint-dynamic="1.3.15" callerrev="0.1.0-SNAPSHOT"/>
 				<caller organisation="com.typesafe.play" name="play_2.12" conf="compile, runtime" rev="1.3.15" rev-constraint-default="1.3.15" rev-constraint-dynamic="1.3.15" callerrev="2.6.20"/>
+				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="1.3.15" rev-constraint-default="1.3.15" rev-constraint-dynamic="1.3.15" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
 					<artifact name="twirl-api_2.12" type="jar" ext="jar" status="no" details="" size="76119" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\twirl-api_2.12\jars\twirl-api_2.12-1.3.15.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/play/twirl-api_2.12/1.3.15/twirl-api_2.12-1.3.15.jar"/>
@@ -1270,7 +1270,7 @@
 			<revision name="1.2.2" status="release" pubdate="20171006163322" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/playframework/play-enhancer" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="1">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="2704" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\play-enhancer\ivy-1.2.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/play/play-enhancer/1.2.2/play-enhancer-1.2.2.pom"/>
-				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="1.2.2" rev-constraint-default="1.2.2" rev-constraint-dynamic="1.2.2" callerrev="0.1.0-SNAPSHOT"/>
+				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="1.2.2" rev-constraint-default="1.2.2" rev-constraint-dynamic="1.2.2" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
 					<artifact name="play-enhancer" type="jar" ext="jar" status="no" details="" size="8112" time="0" location="C:\Users\noima\.ivy2\cache\com.typesafe.play\play-enhancer\jars\play-enhancer-1.2.2.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/play/play-enhancer/1.2.2/play-enhancer-1.2.2.jar"/>
@@ -1320,10 +1320,10 @@
 				<caller organisation="com.typesafe.play" name="play-server_2.12" conf="default, compile, runtime, master" rev="2.12.8" rev-constraint-default="2.12.8" rev-constraint-dynamic="2.12.8" callerrev="2.6.20"/>
 				<caller organisation="com.typesafe.play" name="play-jdbc_2.12" conf="compile, runtime" rev="2.12.8" rev-constraint-default="2.12.8" rev-constraint-dynamic="2.12.8" callerrev="2.6.20"/>
 				<caller organisation="com.typesafe.akka" name="akka-slf4j_2.12" conf="compile, runtime" rev="2.12.8" rev-constraint-default="2.12.8" rev-constraint-dynamic="2.12.8" callerrev="2.5.17"/>
-				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="2.12.8" rev-constraint-default="2.12.8" rev-constraint-dynamic="2.12.8" callerrev="0.1.0-SNAPSHOT"/>
 				<caller organisation="com.typesafe.play" name="play-java_2.12" conf="compile, runtime" rev="2.12.8" rev-constraint-default="2.12.8" rev-constraint-dynamic="2.12.8" callerrev="2.6.6"/>
 				<caller organisation="com.typesafe.play" name="play-streams_2.12" conf="compile, runtime" rev="2.12.8" rev-constraint-default="2.12.8" rev-constraint-dynamic="2.12.8" callerrev="2.6.20"/>
 				<caller organisation="com.typesafe.akka" name="akka-parsing_2.12" conf="compile, runtime" rev="2.12.8" rev-constraint-default="2.12.8" rev-constraint-dynamic="2.12.8" callerrev="10.0.14"/>
+				<caller organisation="sdev-ca1" name="sdev-ca1_2.12" conf="compile, runtime-internal, runtime, optional" rev="2.12.8" rev-constraint-default="2.12.8" rev-constraint-dynamic="2.12.8" callerrev="1.0-SNAPSHOT"/>
 				<caller organisation="com.typesafe.play" name="play-json_2.12" conf="compile, runtime" rev="2.12.8" rev-constraint-default="2.12.8" rev-constraint-dynamic="2.12.8" callerrev="2.6.10"/>
 				<caller organisation="com.typesafe.play" name="filters-helpers_2.12" conf="default, compile, runtime, master" rev="2.12.8" rev-constraint-default="2.12.8" rev-constraint-dynamic="2.12.8" callerrev="2.6.20"/>
 				<caller organisation="org.typelevel" name="macro-compat_2.12" conf="compile, runtime" rev="2.12.8" rev-constraint-default="2.12.8" rev-constraint-dynamic="2.12.8" callerrev="1.1.1"/>

@@ -41,13 +41,13 @@
                   <td>@e.getDepartment.getName</td>
                   <!-- Update button -->
 						<td>
-							<a href="@routes.LoginController.updateAdmin(e.getEmail)" class="button-xs btn-danger">
+							<a href="@routes.LoginController.updateEmployee(e.getEmail)" class="button-xs btn-danger">
 								<span class="glyphicon glyphicon-pencil"></span>
 							</a>
                         </td>
                   <!-- Delete button -->
 						<td>
-							<a href="@routes.LoginController.deleteAdmin(e.getEmail)" class="button-xs btn-danger" onclick="return confirmDel();">
+							<a href="@routes.LoginController.deleteEmployee(e.getEmail)" class="button-xs btn-danger" onclick="return confirmDel();">
 								<span class="glyphicon glyphicon-trash"></span>
 							</a>
                         </td>
