@@ -1,5 +1,5 @@
-@(admins: List[models.users.Employee],user: models.users.Employee)
-@main("Administrators",user){
+@(admins: List[models.users.Employee], departments: List[models.Department], user: models.users.Employee, env: play.api.Environment)
+@main("Administrators", user){
     <h1>Current administrators</h1>
 
 	@if(flash.containsKey("success")) {
@@ -13,11 +13,13 @@
             <thead>
         <!-- The header row-->
         <tr>
+            <th>Profile picture</th>
             <th>Email</th>
             <th>First name</th>
             <th>Last name</th>
             <th>Date of birth</th>
             <th>Mobile number</th>
+            <th>Department</th>
         </tr>
         </thead>
         <tbody>
@@ -26,11 +28,17 @@
             @for(a<-admins) {
                 @if(a.getRole() == "admin"){
                <tr>
+                    @if(env.resource("public/images/productImages/" + a.getId + "thumb.jpg").isDefined) {
+                        <td><img src="/assets/images/productImages/@(a.getId + "thumb.jpg")"/></td>
+                    } else {
+                        <td><img src="/assets/images/productImages/noImage.jpg"/></td>
+                    }
                   <td>@a.getEmail</td>
                   <td>@a.getEmpFirstName</td>
                   <td>@a.getEmpLastName</td>
                   <td>@a.getDateOfBirthString</td>
                   <td>@a.getMobileNumber</td>
+                  <td>@a.getDepartment.getName</td>
                   <!-- Update button -->
 						<td>
 							<a href="@routes.LoginController.updateAdmin(a.getEmail)" class="button-xs btn-danger">
@@ -52,7 +60,7 @@
 
     <p>
         <a href="@routes.LoginController.addAdmin()">
-            <button class="btn btn-primary">Add a new Administrator</button>
+            <button class="btn btn-primary">Add a new administrator</button>
         </a>
     </p>
 </div>

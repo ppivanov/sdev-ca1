@@ -28,12 +28,12 @@ import org.imgscalr.*;
 public class HomeController extends Controller {
 
     private FormFactory formFactory;
-    private Environment e;
+    private Environment env;
 
     @Inject
     public HomeController(FormFactory f,Environment env) {
         this.formFactory = f;
-        this.e = env;
+        this.env = env;
     }
 
     public Result index() {
@@ -56,90 +56,19 @@ public class HomeController extends Controller {
         return ok(about.render(Employee.getUserById(session().get("email"))));
     }
 
-    
-    
-    public String saveFileOld(Long id, FilePart<File> uploaded) {
-        if (uploaded != null) {
-            String mimeType = uploaded.getContentType();
-            if (mimeType.startsWith("image/")) {
-                String fileName = uploaded.getFilename();
-                String extension = "";
-                int i = fileName.lastIndexOf('.');
-                if (i >= 0) {
-                    extension = fileName.substring(i + 1);
-                }
-                File file = uploaded.getFile();
-                File dir = new File("public/images/productImages");
-                if (!dir.exists()) {
-                    dir.mkdirs();
-                }
-                File newFile = new File("public/images/productImages/", id + "." + extension);
-                if (file.renameTo(newFile)) {
-                    return "/ file uploaded.";
-                } else {
-                    return "/ file upload failed.";
-                }
-
-            }
-        }
-        return "/ no image file.";
-    }
-
-    public String saveFile(Long id, FilePart<File> uploaded) {
-        if (uploaded != null) {
-            String mimeType = uploaded.getContentType();
-            if (mimeType.startsWith("image/")) {
-                String fileName = uploaded.getFilename();
-                String extension = "";
-                int i = fileName.lastIndexOf('.');
-                if (i >= 0) {
-                    extension = fileName.substring(i + 1);
-                }
-                File file = uploaded.getFile();
-                File dir = new File("public/images/productImages");
-                if (!dir.exists()) {
-                    dir.mkdirs();
-                }
-                File newFile = new File("public/images/productImages/", id + "." + extension);
-                if (file.renameTo(newFile)) {
-                    try {
-                        BufferedImage img = ImageIO.read(newFile); 
-                        BufferedImage scaledImg = Scalr.resize(img, 90);
-                        
-                        if (ImageIO.write(scaledImg, extension, new File("public/images/productImages/", id + "thumb.jpg"))) {
-                            return "/ file uploaded and thumbnail created.";
-                        } else {
-                            return "/ file uploaded but thumbnail creation failed.";
-                        }
-                    } catch (IOException e) {
-                        return "/ file uploaded but thumbnail creation failed.";
-                    }
-                } else {
-                    return "/ file upload failed.";
-                }
-
-            }
-        }
-        return "/ no image file.";
-    }
-
     @Security.Authenticated(Secured.class)
     public Result usersAdmin() {
-        List<Employee> empList = null;
+        List<Employee> empList = Employee.findAll();
 
-        empList = Employee.findAll();
-
-        return ok(admin.render(empList, Employee.getUserById(session().get("email"))));
+        return ok(admin.render(empList, Department.findAll(), Employee.getUserById(session().get("email")), env));
 
     }
 
     @Security.Authenticated(Secured.class)
     public Result usersEmployee() {
-        List<Employee> empList = null;
+        List<Employee> empList = Employee.findAll();
 
-        empList = Employee.findAll();
-
-        return ok(employees.render(empList, Employee.getUserById(session().get("email"))));
+        return ok(employees.render(empList, Department.findAll(), Employee.getUserById(session().get("email")), env));
 
     }
 

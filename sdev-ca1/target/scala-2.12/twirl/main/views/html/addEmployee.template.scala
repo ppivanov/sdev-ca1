@@ -36,7 +36,7 @@ Seq[Any](format.raw/*2.1*/("""
 """),format.raw/*5.1*/("""
 """),_display_(/*6.2*/main("Add an employee", user)/*6.31*/{_display_(Seq[Any](format.raw/*6.32*/("""
     """),_display_(/*7.6*/if(flash.containsKey("error"))/*7.36*/ {_display_(Seq[Any](format.raw/*7.38*/("""
-		"""),format.raw/*8.3*/("""<div class="alert alert-success">
+		"""),format.raw/*8.3*/("""<div class="alert alert-danger">
 			"""),_display_(/*9.5*/flash/*9.10*/.get("error")),format.raw/*9.23*/("""
 		"""),format.raw/*10.3*/("""</div>
 	""")))}),format.raw/*11.3*/("""
@@ -47,31 +47,38 @@ Seq[Any](format.raw/*2.1*/("""
         """),_display_(/*16.10*/CSRF/*16.14*/.formField),format.raw/*16.24*/("""
 
             """),_display_(/*18.14*/inputText(userForm("email"), '_label -> "Email", 'class -> "form-control")),format.raw/*18.88*/("""
-            """),_display_(/*19.14*/inputText(userForm("fname"), '_label -> "First name", 'class -> "form-control")),format.raw/*19.93*/("""
-            """),_display_(/*20.14*/inputText(userForm("lname"), '_label -> "Last name", 'class -> "form-control")),format.raw/*20.92*/("""
+            """),_display_(/*19.14*/inputText(userForm("empFirstName"), '_label -> "First name", 'class -> "form-control")),format.raw/*19.100*/("""
+            """),_display_(/*20.14*/inputText(userForm("empLastName"), '_label -> "Last name", 'class -> "form-control")),format.raw/*20.98*/("""
             """),_display_(/*21.14*/inputDate(userForm("dob"), args = 'size -> 10, '_label -> "Date Of Birth", 'class -> "form-control")),format.raw/*21.114*/("""
             """),_display_(/*22.14*/inputPassword(userForm("password"), '_label -> "Password", 'class -> "form-control")),format.raw/*22.98*/("""
             """),_display_(/*23.14*/inputText(userForm("mobileNumber"), '_label -> "Mobile number", 'class -> "form-control")),format.raw/*23.103*/("""
 
-            """),format.raw/*25.13*/("""Address:
-            """),_display_(/*26.14*/inputText(addressForm("number"), '_label -> "Number", 'class -> "form-control")),format.raw/*26.93*/("""
-            """),_display_(/*27.14*/inputText(addressForm("street"), '_label -> "Street", 'class -> "form-control")),format.raw/*27.93*/("""
-            """),_display_(/*28.14*/inputText(addressForm("city"), '_label -> "City", 'class -> "form-control")),format.raw/*28.89*/("""
-            """),_display_(/*29.14*/inputText(addressForm("postCode"), '_label -> "Postcode", 'class -> "form-control")),format.raw/*29.97*/("""
+            """),_display_(/*25.14*/select(
+                userForm("department.id"),
+                options(Department.options),
+                '_label -> "Department", '_default -> "-- Choose a department --",
+                '_showConstraints -> false, 'class -> "form-control"
+            )),format.raw/*30.14*/("""
 
-            """),_display_(/*31.14*/inputText(userForm("role").copy(value=Some("employee")), '_label -> "",'hidden -> "hidden")),format.raw/*31.105*/("""
+            """),format.raw/*32.13*/("""Address:
+            """),_display_(/*33.14*/inputText(addressForm("number"), '_label -> "Number", 'class -> "form-control")),format.raw/*33.93*/("""
+            """),_display_(/*34.14*/inputText(addressForm("street"), '_label -> "Street", 'class -> "form-control")),format.raw/*34.93*/("""
+            """),_display_(/*35.14*/inputText(addressForm("city"), '_label -> "City", 'class -> "form-control")),format.raw/*35.89*/("""
+            """),_display_(/*36.14*/inputText(addressForm("postCode"), '_label -> "Postcode", 'class -> "form-control")),format.raw/*36.97*/("""
+
+            """),_display_(/*38.14*/inputText(userForm("role").copy(value=Some("employee")), '_label -> "",'hidden -> "hidden")),format.raw/*38.105*/("""
             
-            """),format.raw/*33.13*/("""<label>Upload Profile Image</label>
+            """),format.raw/*40.13*/("""<label>Upload profile picture</label>
             <input class="btn-sm btn-default" type="file" name="upload">    
 
             <div class="actions">
                 <input type="submit" value="Add/Update Employee" class="btn btn-primary">
-                <a href=""""),_display_(/*38.27*/routes/*38.33*/.HomeController.index),format.raw/*38.54*/("""">
+                <a href=""""),_display_(/*45.27*/routes/*45.33*/.HomeController.index),format.raw/*45.54*/("""">
                     <button type="button" class="btn btn-warning">Cancel</button>
                 </a>
             </div>
-    """)))}),format.raw/*42.6*/(""" """),format.raw/*42.24*/("""
-""")))}),format.raw/*43.2*/(""" """))
+    """)))}),format.raw/*49.6*/(""" """),format.raw/*49.24*/("""
+""")))}),format.raw/*50.2*/(""" """))
       }
     }
   }
@@ -87,11 +94,11 @@ Seq[Any](format.raw/*2.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Mar 17 14:54:58 GMT 2019
+                  DATE: Mon Mar 18 14:07:56 GMT 2019
                   SOURCE: D:/Computing/sdev-ca1/sdev-ca1/sdev-ca1/app/views/addEmployee.scala.html
-                  HASH: 487bdf61d588c9838467947865fc6ade3211dd4c
-                  MATRIX: 1024->1|1206->113|1242->143|1286->111|1313->159|1340->161|1377->190|1415->191|1446->197|1484->227|1523->229|1552->232|1615->270|1628->275|1661->288|1691->291|1730->300|1763->306|1834->351|1945->452|1986->454|2023->464|2036->468|2067->478|2109->493|2204->567|2245->581|2345->660|2386->674|2485->752|2526->766|2648->866|2689->880|2794->964|2835->978|2946->1067|2988->1081|3037->1103|3137->1182|3178->1196|3278->1275|3319->1289|3415->1364|3456->1378|3560->1461|3602->1476|3715->1567|3769->1593|4060->1857|4075->1863|4117->1884|4277->2014|4306->2032|4338->2034
-                  LINES: 28->1|31->3|32->4|35->2|36->5|37->6|37->6|37->6|38->7|38->7|38->7|39->8|40->9|40->9|40->9|41->10|42->11|44->13|46->15|46->15|46->15|47->16|47->16|47->16|49->18|49->18|50->19|50->19|51->20|51->20|52->21|52->21|53->22|53->22|54->23|54->23|56->25|57->26|57->26|58->27|58->27|59->28|59->28|60->29|60->29|62->31|62->31|64->33|69->38|69->38|69->38|73->42|73->42|74->43
+                  HASH: 53fab4a732488cb821a16bbc650d25d55f712401
+                  MATRIX: 1024->1|1206->113|1242->143|1286->111|1313->159|1340->161|1377->190|1415->191|1446->197|1484->227|1523->229|1552->232|1614->269|1627->274|1660->287|1690->290|1729->299|1762->305|1833->350|1944->451|1985->453|2022->463|2035->467|2066->477|2108->492|2203->566|2244->580|2352->666|2393->680|2498->764|2539->778|2661->878|2702->892|2807->976|2848->990|2959->1079|3001->1094|3283->1355|3325->1369|3374->1391|3474->1470|3515->1484|3615->1563|3656->1577|3752->1652|3793->1666|3897->1749|3939->1764|4052->1855|4106->1881|4399->2147|4414->2153|4456->2174|4616->2304|4645->2322|4677->2324
+                  LINES: 28->1|31->3|32->4|35->2|36->5|37->6|37->6|37->6|38->7|38->7|38->7|39->8|40->9|40->9|40->9|41->10|42->11|44->13|46->15|46->15|46->15|47->16|47->16|47->16|49->18|49->18|50->19|50->19|51->20|51->20|52->21|52->21|53->22|53->22|54->23|54->23|56->25|61->30|63->32|64->33|64->33|65->34|65->34|66->35|66->35|67->36|67->36|69->38|69->38|71->40|76->45|76->45|76->45|80->49|80->49|81->50
                   -- GENERATED --
               */
           

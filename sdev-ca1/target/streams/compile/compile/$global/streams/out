@@ -1,0 +1,5 @@
+[0m[[0m[31merror[0m] [0m[0mD:\Computing\sdev-ca1\sdev-ca1\sdev-ca1\app\controllers\LoginController.java:155:1:  error: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m        String saveImageMessage = saveFile(newEmp.getId(), image);[0m
+[0m[[0m[31merror[0m] [0m[0m                                  ^  symbol:   method saveFile(Long,FilePart<File>)[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class LoginController[0m
+[0m[[0m[31merror[0m] [0m[0m1 error[0m

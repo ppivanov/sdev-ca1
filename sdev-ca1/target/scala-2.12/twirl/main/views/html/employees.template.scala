@@ -22,10 +22,10 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object employees extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[List[models.users.Employee],models.users.Employee,play.twirl.api.HtmlFormat.Appendable] {
+object employees extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template4[List[models.users.Employee],List[models.Department],models.users.Employee,play.api.Environment,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(employees: List[models.users.Employee], user: models.users.Employee):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(employees: List[models.users.Employee], departments: List[models.Department], user: models.users.Employee, env: play.api.Environment):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
@@ -44,45 +44,53 @@ Seq[Any](_display_(/*2.2*/main("Employees", user)/*2.25*/{_display_(Seq[Any](for
             <thead>
         <!-- The header row-->
         <tr>
+            <th>Profile picture</th>
             <th>Email</th>
             <th>First name</th>
             <th>Last name</th>
             <th>Date of birth</th>
             <th>Mobile number</th>
+            <th>Department</th>
         </tr>
         </thead>
         <tbody>
         <!-- Product row(s) -->
        
-            """),_display_(/*26.14*/for(e <- employees) yield /*26.33*/ {_display_(Seq[Any](format.raw/*26.35*/("""
-                """),_display_(/*27.18*/if(e.getRole() != "admin")/*27.44*/{_display_(Seq[Any](format.raw/*27.45*/("""
-               """),format.raw/*28.16*/("""<tr>
-                  <td>"""),_display_(/*29.24*/e/*29.25*/.getEmail),format.raw/*29.34*/("""</td>
-                  <td>"""),_display_(/*30.24*/e/*30.25*/.getEmpFirstName),format.raw/*30.41*/("""</td>
-                  <td>"""),_display_(/*31.24*/e/*31.25*/.getEmpLastName),format.raw/*31.40*/("""</td>
-                  <td>"""),_display_(/*32.24*/e/*32.25*/.getDateOfBirthString),format.raw/*32.46*/("""</td>
-                  <td>"""),_display_(/*33.24*/e/*33.25*/.getMobileNumber),format.raw/*33.41*/("""</td>
+            """),_display_(/*28.14*/for(e <- employees) yield /*28.33*/ {_display_(Seq[Any](format.raw/*28.35*/("""
+                """),_display_(/*29.18*/if(e.getRole() != "admin")/*29.44*/{_display_(Seq[Any](format.raw/*29.45*/("""
+               """),format.raw/*30.16*/("""<tr>
+                    """),_display_(/*31.22*/if(env.resource("public/images/productImages/" + e.getId + "thumb.jpg").isDefined)/*31.104*/ {_display_(Seq[Any](format.raw/*31.106*/("""
+                        """),format.raw/*32.25*/("""<td><img src="/assets/images/productImages/"""),_display_(/*32.69*/(e.getId + "thumb.jpg")),format.raw/*32.92*/(""""/></td>
+                    """)))}/*33.23*/else/*33.28*/{_display_(Seq[Any](format.raw/*33.29*/("""
+                        """),format.raw/*34.25*/("""<td><img src="/assets/images/productImages/noImage.jpg"/></td>
+                    """)))}),format.raw/*35.22*/("""
+                  """),format.raw/*36.19*/("""<td>"""),_display_(/*36.24*/e/*36.25*/.getEmail),format.raw/*36.34*/("""</td>
+                  <td>"""),_display_(/*37.24*/e/*37.25*/.getEmpFirstName),format.raw/*37.41*/("""</td>
+                  <td>"""),_display_(/*38.24*/e/*38.25*/.getEmpLastName),format.raw/*38.40*/("""</td>
+                  <td>"""),_display_(/*39.24*/e/*39.25*/.getDateOfBirthString),format.raw/*39.46*/("""</td>
+                  <td>"""),_display_(/*40.24*/e/*40.25*/.getMobileNumber),format.raw/*40.41*/("""</td>
+                  <td>"""),_display_(/*41.24*/e/*41.25*/.getDepartment.getName),format.raw/*41.47*/("""</td>
                   <!-- Update button -->
 						<td>
-							<a href=""""),_display_(/*36.18*/routes/*36.24*/.LoginController.updateAdmin(e.getEmail)),format.raw/*36.64*/("""" class="button-xs btn-danger">
+							<a href=""""),_display_(/*44.18*/routes/*44.24*/.LoginController.updateAdmin(e.getEmail)),format.raw/*44.64*/("""" class="button-xs btn-danger">
 								<span class="glyphicon glyphicon-pencil"></span>
 							</a>
                         </td>
                   <!-- Delete button -->
 						<td>
-							<a href=""""),_display_(/*42.18*/routes/*42.24*/.LoginController.deleteAdmin(e.getEmail)),format.raw/*42.64*/("""" class="button-xs btn-danger" onclick="return confirmDel();">
+							<a href=""""),_display_(/*50.18*/routes/*50.24*/.LoginController.deleteAdmin(e.getEmail)),format.raw/*50.64*/("""" class="button-xs btn-danger" onclick="return confirmDel();">
 								<span class="glyphicon glyphicon-trash"></span>
 							</a>
                         </td>
                </tr>
-                """)))}),format.raw/*47.18*/("""
-            """)))}),format.raw/*48.14*/("""
+                """)))}),format.raw/*55.18*/("""
+            """)))}),format.raw/*56.14*/("""
         
-        """),format.raw/*50.9*/("""</tbody>
+        """),format.raw/*58.9*/("""</tbody>
     </table>
 
     <p>
-        <a href=""""),_display_(/*54.19*/routes/*54.25*/.LoginController.addEmployee()),format.raw/*54.55*/("""">
+        <a href=""""),_display_(/*62.19*/routes/*62.25*/.LoginController.addEmployee()),format.raw/*62.55*/("""">
             <button class="btn btn-primary">Register a new employee</button>
         </a>
     </p>
@@ -92,9 +100,9 @@ Seq[Any](_display_(/*2.2*/main("Employees", user)/*2.25*/{_display_(Seq[Any](for
     }
   }
 
-  def render(employees:List[models.users.Employee],user:models.users.Employee): play.twirl.api.HtmlFormat.Appendable = apply(employees,user)
+  def render(employees:List[models.users.Employee],departments:List[models.Department],user:models.users.Employee,env:play.api.Environment): play.twirl.api.HtmlFormat.Appendable = apply(employees,departments,user,env)
 
-  def f:((List[models.users.Employee],models.users.Employee) => play.twirl.api.HtmlFormat.Appendable) = (employees,user) => apply(employees,user)
+  def f:((List[models.users.Employee],List[models.Department],models.users.Employee,play.api.Environment) => play.twirl.api.HtmlFormat.Appendable) = (employees,departments,user,env) => apply(employees,departments,user,env)
 
   def ref: this.type = this
 
@@ -103,11 +111,11 @@ Seq[Any](_display_(/*2.2*/main("Employees", user)/*2.25*/{_display_(Seq[Any](for
 
               /*
                   -- GENERATED --
-                  DATE: Sun Mar 17 14:43:42 GMT 2019
+                  DATE: Mon Mar 18 14:12:43 GMT 2019
                   SOURCE: D:/Computing/sdev-ca1/sdev-ca1/sdev-ca1/app/views/employees.scala.html
-                  HASH: 1c4faa0a0ba255826463539643d05336258f88d3
-                  MATRIX: 995->1|1158->72|1189->95|1227->96|1258->101|1313->131|1353->163|1392->165|1421->168|1484->206|1497->211|1532->226|1561->229|1598->237|1630->242|2077->662|2112->681|2152->683|2197->701|2232->727|2271->728|2315->744|2370->772|2380->773|2410->782|2466->811|2476->812|2513->828|2569->857|2579->858|2615->873|2671->902|2681->903|2723->924|2779->953|2789->954|2826->970|2928->1045|2943->1051|3004->1091|3231->1291|3246->1297|3307->1337|3537->1536|3582->1550|3627->1568|3703->1617|3718->1623|3769->1653
-                  LINES: 28->1|33->2|33->2|33->2|34->3|36->5|36->5|36->5|37->6|38->7|38->7|38->7|39->8|40->9|42->11|57->26|57->26|57->26|58->27|58->27|58->27|59->28|60->29|60->29|60->29|61->30|61->30|61->30|62->31|62->31|62->31|63->32|63->32|63->32|64->33|64->33|64->33|67->36|67->36|67->36|73->42|73->42|73->42|78->47|79->48|81->50|85->54|85->54|85->54
+                  HASH: 037f7b1fb2fde57d14534a4b4aff0c8be57447f3
+                  MATRIX: 1040->1|1268->137|1299->160|1337->161|1368->166|1423->196|1463->228|1502->230|1531->233|1594->271|1607->276|1642->291|1671->294|1708->302|1740->307|2256->796|2291->815|2331->817|2376->835|2411->861|2450->862|2494->878|2547->904|2639->986|2680->988|2733->1013|2804->1057|2848->1080|2897->1111|2910->1116|2949->1117|3002->1142|3117->1226|3164->1245|3196->1250|3206->1251|3236->1260|3292->1289|3302->1290|3339->1306|3395->1335|3405->1336|3441->1351|3497->1380|3507->1381|3549->1402|3605->1431|3615->1432|3652->1448|3708->1477|3718->1478|3761->1500|3863->1575|3878->1581|3939->1621|4166->1821|4181->1827|4242->1867|4472->2066|4517->2080|4562->2098|4638->2147|4653->2153|4704->2183
+                  LINES: 28->1|33->2|33->2|33->2|34->3|36->5|36->5|36->5|37->6|38->7|38->7|38->7|39->8|40->9|42->11|59->28|59->28|59->28|60->29|60->29|60->29|61->30|62->31|62->31|62->31|63->32|63->32|63->32|64->33|64->33|64->33|65->34|66->35|67->36|67->36|67->36|67->36|68->37|68->37|68->37|69->38|69->38|69->38|70->39|70->39|70->39|71->40|71->40|71->40|72->41|72->41|72->41|75->44|75->44|75->44|81->50|81->50|81->50|86->55|87->56|89->58|93->62|93->62|93->62
                   -- GENERATED --
               */
           

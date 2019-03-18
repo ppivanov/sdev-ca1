@@ -42,4 +42,19 @@ public class Department extends Model{
     public void setName(String name){
         this.name = name;
     }
+
+    public static Finder<Long,Department> find = new Finder<Long,Department>(Department.class);
+
+    public static List<Department> findAll(){
+        return Department.find.query().where().orderBy("id asc").findList();
+    }
+
+    public static Map<String, String> options(){
+        LinkedHashMap<String, String> options = new LinkedHashMap();
+
+        for(Department d: Department.findAll()){
+            options.put(d.getId().toString(), d.getName());
+        }
+        return options;
+}
 }

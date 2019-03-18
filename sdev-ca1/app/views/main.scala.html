@@ -27,7 +27,7 @@
 			<li @if(pagename == "About") {class="active"}><a href="@routes.HomeController.about()">About us</a></li>
 			
 			@if((user != null) && ("admin".equals(user.getRole()))) {
-				<li @if(pagename == "Add an employee") {class="active"}><a href="@routes.LoginController.addEmployee()">Register user</a></li>
+				<li @if(pagename == "Add an employee") {class="active"}><a href="@routes.LoginController.addEmployee()">Register employee</a></li>
 				<li @if(pagename == "Add an admin") {class="active"}><a href="@routes.LoginController.addAdmin()">Register admin</a></li>
 				<li @if(pagename == "Administrators") {class="active"}><a href="@routes.HomeController.usersAdmin()">View admins</a></li>
 				<li @if(pagename == "Employees") {class="active"}><a href="@routes.HomeController.usersEmployee()">View employees</a></li>

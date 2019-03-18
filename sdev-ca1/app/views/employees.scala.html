@@ -1,4 +1,4 @@
-@(employees: List[models.users.Employee], user: models.users.Employee)
+@(employees: List[models.users.Employee], departments: List[models.Department], user: models.users.Employee, env: play.api.Environment)
 @main("Employees", user){
     <h1>Current employees</h1>
 
@@ -13,11 +13,13 @@
             <thead>
         <!-- The header row-->
         <tr>
+            <th>Profile picture</th>
             <th>Email</th>
             <th>First name</th>
             <th>Last name</th>
             <th>Date of birth</th>
             <th>Mobile number</th>
+            <th>Department</th>
         </tr>
         </thead>
         <tbody>
@@ -26,11 +28,17 @@
             @for(e <- employees) {
                 @if(e.getRole() != "admin"){
                <tr>
+                    @if(env.resource("public/images/productImages/" + e.getId + "thumb.jpg").isDefined) {
+                        <td><img src="/assets/images/productImages/@(e.getId + "thumb.jpg")"/></td>
+                    } else {
+                        <td><img src="/assets/images/productImages/noImage.jpg"/></td>
+                    }
                   <td>@e.getEmail</td>
                   <td>@e.getEmpFirstName</td>
                   <td>@e.getEmpLastName</td>
                   <td>@e.getDateOfBirthString</td>
                   <td>@e.getMobileNumber</td>
+                  <td>@e.getDepartment.getName</td>
                   <!-- Update button -->
 						<td>
 							<a href="@routes.LoginController.updateAdmin(e.getEmail)" class="button-xs btn-danger">

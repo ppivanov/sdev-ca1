@@ -5,7 +5,7 @@
 
 @main("Add an employee", user){
     @if(flash.containsKey("error")) {
-		<div class="alert alert-success">
+		<div class="alert alert-danger">
 			@flash.get("error")
 		</div>
 	}
@@ -16,11 +16,18 @@
         @CSRF.formField
 
             @inputText(userForm("email"), '_label -> "Email", 'class -> "form-control")
-            @inputText(userForm("fname"), '_label -> "First name", 'class -> "form-control")
-            @inputText(userForm("lname"), '_label -> "Last name", 'class -> "form-control")
+            @inputText(userForm("empFirstName"), '_label -> "First name", 'class -> "form-control")
+            @inputText(userForm("empLastName"), '_label -> "Last name", 'class -> "form-control")
             @inputDate(userForm("dob"), args = 'size -> 10, '_label -> "Date Of Birth", 'class -> "form-control")
             @inputPassword(userForm("password"), '_label -> "Password", 'class -> "form-control")
             @inputText(userForm("mobileNumber"), '_label -> "Mobile number", 'class -> "form-control")
+
+            @select(
+                userForm("department.id"),
+                options(Department.options),
+                '_label -> "Department", '_default -> "-- Choose a department --",
+                '_showConstraints -> false, 'class -> "form-control"
+            )
 
             Address:
             @inputText(addressForm("number"), '_label -> "Number", 'class -> "form-control")
@@ -30,7 +37,7 @@
 
             @inputText(userForm("role").copy(value=Some("employee")), '_label -> "",'hidden -> "hidden")
             
-            <label>Upload Profile Image</label>
+            <label>Upload profile picture</label>
             <input class="btn-sm btn-default" type="file" name="upload">    
 
             <div class="actions">

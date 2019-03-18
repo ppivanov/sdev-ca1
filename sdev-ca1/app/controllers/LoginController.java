@@ -10,6 +10,15 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
 
+
+import play.mvc.Http.*;
+import play.mvc.Http.MultipartFormData.FilePart;
+import java.io.File;
+import java.io.IOException;
+import java.awt.image.*;
+import javax.imageio.*;
+import org.imgscalr.*;
+
 import models.users.*;
 
 import views.html.*;
@@ -141,6 +150,9 @@ public class LoginController extends Controller {
             newEmp.update();
             flash("success", "Administrator " + newEmp.getEmpFirstName() + " " + newEmp.getEmpLastName() + " was updated.");
         }
+        MultipartFormData<File> data = request().body().asMultipartFormData();
+        FilePart<File> image = data.getFile("upload");
+        String saveImageMessage = saveFile(newEmp.getId(), image);
         
         return redirect(controllers.routes.HomeController.usersAdmin()); 
         }
@@ -178,5 +190,43 @@ public class LoginController extends Controller {
         }
 
         return ok(addEmployee.render(empForm, aForm, Employee.getUserById(session().get("email"))));
+    }
+
+    public String saveFile(Long id, FilePart<File> uploaded) {
+        if (uploaded != null) {
+            String mimeType = uploaded.getContentType();
+            if (mimeType.startsWith("image/")) {
+                String fileName = uploaded.getFilename();
+                String extension = "";
+                int i = fileName.lastIndexOf('.');
+                if (i >= 0) {
+                    extension = fileName.substring(i + 1);
+                }
+                File file = uploaded.getFile();
+                File dir = new File("public/images/productImages");
+                if (!dir.exists()) {
+                    dir.mkdirs();
+                }
+                File newFile = new File("public/images/productImages/", id + "." + extension);
+                if (file.renameTo(newFile)) {
+                    try {
+                        BufferedImage img = ImageIO.read(newFile); 
+                        BufferedImage scaledImg = Scalr.resize(img, 90);
+                        
+                        if (ImageIO.write(scaledImg, extension, new File("public/images/productImages/", id + "thumb.jpg"))) {
+                            return "/ file uploaded and thumbnail created.";
+                        } else {
+                            return "/ file uploaded but thumbnail creation failed.";
+                        }
+                    } catch (IOException e) {
+                        return "/ file uploaded but thumbnail creation failed.";
+                    }
+                } else {
+                    return "/ file upload failed.";
+                }
+
+            }
+        }
+        return "/ no image file.";
     }
 }
