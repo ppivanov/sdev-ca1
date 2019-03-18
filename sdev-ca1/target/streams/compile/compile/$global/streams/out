@@ -1,3 +1,2 @@
-[0m[[0m[31merror[0m] [0m[0mD:\Computing\sdev-ca1\sdev-ca1\sdev-ca1\app\views\projects.scala.html:49:45: value showMyProjects is not a member of controllers.ReverseHomeController[0m
-[0m[[0m[31merror[0m] [0m[0m            <a href="@routes.HomeController.showMyProjects(0)">[0m
-[0m[[0m[31merror[0m] [0m[0m                                            ^[0m
+[0m[[0m[0minfo[0m] [0m[0mNote: D:\Computing\sdev-ca1\sdev-ca1\sdev-ca1\app\models\users\Employee.java uses unchecked or unsafe operations.[0m
+[0m[[0m[0minfo[0m] [0m[0mNote: Recompile with -Xlint:unchecked for details.[0m

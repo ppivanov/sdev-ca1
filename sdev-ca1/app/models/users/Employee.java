@@ -25,7 +25,7 @@ public class Employee extends Model {
     private String empFirstName;
     @Constraints.Required
     private String empLastName;
-    private String role; //administrator, manager or employee
+    private String role; //administrator or employee
     @Constraints.Required
     @Temporal(TemporalType.DATE)
     private Date dob;

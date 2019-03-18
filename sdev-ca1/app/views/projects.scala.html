@@ -6,9 +6,9 @@
       <table class="table table-bordered table-hover table-condensed">
         <thead>
           <tr>
-            <th>Project #</th>
             <th>Project Name</th>
             <th>Description</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
@@ -19,19 +19,23 @@
             <td>@p.getProjectDescription</td>
             <td>@p.getProjectStatus</td>
             
-            <!-- Update button -->
-            <td>
-              <a href="@routes.ProjectController.updateProject(p.getProjectId)" class="button-xs btn-danger">
-                <span class="glyphicon glyphicon-pencil"></span>
-              </a>
-            </td>
-            <!-- Delete button -->
-            <td>
-              <a href="@routes.ProjectController.deleteProject(p.getProjectId)" class="button-xs btn-danger"
-                onclick="return confirmDel();">
-                <span class="glyphicon glyphicon-trash"></span>
-              </a>
-            </td>
+            @if(user != null){
+              <!-- Update button -->
+              <td>
+                <a href="@routes.ProjectController.updateProject(p.getProjectId)" class="button-xs btn-danger">
+                  <span class="glyphicon glyphicon-pencil"></span>
+                </a>
+              </td>
+              <!-- Delete button -->
+              @if("admin".equals(user.getRole())){
+                <td>
+                  <a href="@routes.ProjectController.deleteProject(p.getProjectId)" class="button-xs btn-danger"
+                    onclick="return confirmDel();">
+                    <span class="glyphicon glyphicon-trash"></span>
+                  </a>
+                </td>
+              }
+            }
             </tr>
           }
 

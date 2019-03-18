@@ -52,11 +52,12 @@ public class HomeController extends Controller {
         return ok(projects.render(projectList, Employee.getUserById(session().get("email"))));
     }
 
-    public Result about() {
-        return ok(about.render(Employee.getUserById(session().get("email"))));
-    }
+    // public Result about() {
+    //     return ok(about.render(Employee.getUserById(session().get("email"))));
+    // }
 
     @Security.Authenticated(Secured.class)
+    @With(AuthAdmin.class)
     public Result usersAdmin() {
         List<Employee> empList = Employee.findAll();
 
@@ -65,6 +66,7 @@ public class HomeController extends Controller {
     }
 
     @Security.Authenticated(Secured.class)
+    @With(AuthAdmin.class)
     public Result usersEmployee() {
         List<Employee> empList = Employee.findAll();
 

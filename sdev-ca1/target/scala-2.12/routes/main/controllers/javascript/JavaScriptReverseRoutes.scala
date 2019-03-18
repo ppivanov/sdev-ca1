@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/Computing/sdev-ca1/sdev-ca1/sdev-ca1/conf/routes
-// @DATE:Mon Mar 18 20:40:47 GMT 2019
+// @DATE:Mon Mar 18 21:13:15 GMT 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -79,12 +79,12 @@ package controllers.javascript {
     }
 
   
-    // @LINE:26
-    def usersEmployee: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.usersEmployee",
+    // @LINE:9
+    def projects: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.projects",
       """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "employees"})
+        function(empid0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "projects/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("empid", empid0))})
         }
       """
     )
@@ -99,32 +99,22 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:7
-    def about: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.about",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "about"})
-        }
-      """
-    )
-  
-    // @LINE:9
-    def projects: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.projects",
-      """
-        function(empid0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "projects/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("empid", empid0))})
-        }
-      """
-    )
-  
     // @LINE:5
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.index",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + """"})
+        }
+      """
+    )
+  
+    // @LINE:26
+    def usersEmployee: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.usersEmployee",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "employees"})
         }
       """
     )

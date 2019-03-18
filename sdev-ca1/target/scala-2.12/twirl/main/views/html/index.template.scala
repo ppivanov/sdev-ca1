@@ -32,8 +32,8 @@ object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
 
 Seq[Any](format.raw/*1.31*/("""
 """),_display_(/*2.2*/main("Home",user)/*2.19*/{_display_(Seq[Any](format.raw/*2.20*/("""
-"""),format.raw/*3.1*/("""<h1>Welcome to the Online Flea Market! </h1>
-<h3>The place where you can buy anything and sell anyting<br/> (as long as it is legal and morally ok)</h3>
+"""),format.raw/*3.1*/("""<h1>Welcome to Project Management! </h1>
+<h3>"""),format.raw/*4.5*/("""{"""),format.raw/*4.6*/("""Companny name here"""),format.raw/*4.24*/("""}"""),format.raw/*4.25*/("""</h3>
 """)))}),format.raw/*5.2*/("""		  """))
       }
     }
@@ -50,11 +50,11 @@ Seq[Any](format.raw/*1.31*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Mar 18 18:26:49 GMT 2019
+                  DATE: Mon Mar 18 21:09:44 GMT 2019
                   SOURCE: D:/Computing/sdev-ca1/sdev-ca1/sdev-ca1/app/views/index.scala.html
-                  HASH: 6db0e1d5d95debb6b2e1d0441a9c1614ed3648f3
-                  MATRIX: 963->1|1087->30|1115->33|1140->50|1178->51|1206->53|1391->209
-                  LINES: 28->1|33->1|34->2|34->2|34->2|35->3|37->5
+                  HASH: 1177edc9843ec59209f85d823cd15f35283bdf60
+                  MATRIX: 963->1|1087->30|1115->33|1140->50|1178->51|1206->53|1278->99|1305->100|1350->118|1378->119|1415->127
+                  LINES: 28->1|33->1|34->2|34->2|34->2|35->3|36->4|36->4|36->4|36->4|37->5
                   -- GENERATED --
               */
           

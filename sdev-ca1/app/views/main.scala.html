@@ -19,12 +19,11 @@
 	<nav class="navbar navbar-inverse">
 	    <div class="container-fluid">
 		<div class="navbar-header">
-		    <a class="navbar-brand" href="#">WebSiteName</a>
+		    <a class="navbar-brand" href="@routes.HomeController.index()">ProjectManagement</a>
 		</div>
 		<ul class="nav navbar-nav">
             <li @if(pagename == "Home") {class="active"}><a href="@routes.HomeController.index()">Home</a></li>
 		    <li @if(pagename == "Projects") {class="active"}><a href="@routes.HomeController.projects(0)">Projects</a></li> <!-- redirect to projects page -->
-			<li @if(pagename == "About") {class="active"}><a href="@routes.HomeController.about()">About us</a></li>
 			
 			@if((user != null) && ("admin".equals(user.getRole()))) {
 				<li @if(pagename == "Add an employee") {class="active"}><a href="@routes.LoginController.addEmployee()">Register employee</a></li>
@@ -50,8 +49,9 @@
 		<div class="col-sm-2">
 		    <div class="well sidecol">
 			<h2>News</h2>
-			<h3>New product sub-category</h3>
-			<p>Following the sudden and unprecedented volumes of trade in fashion paper bags, our <span class="redtext">bags</span> category has been extended to include a seventh subcategory, <span class="redtext">paper handbags</span>.
+			<h3>Progress</h3>
+			<p>This week we move the <span class="redtext">NATO Surveilance</span> project into develelopment stage.</p>
+			<p>We will also start planning <span class="redtext">TUD Timetable system</span> project.</p>
 		    </div>
 		</div>
 		<div class="col-sm-8">
@@ -62,15 +62,14 @@
 		<div class="col-sm-2">
 		    <div class="well sidecol">
 			<h2>Events</h2>
-			<h3>The 153rd Meet for Real event</h3>
-			<p>The popular <span class="redtext">Meet for Real</span> event takes place this Sunday at the Square Park, from 7am until 1pm. It will yet again give flea-market enthusiasts a chance to engage in a bit of live bartering and banter with their fellow sitesters.</p>
+			<h3></h3>
 		    </div>
 		</div>
 	    </div>
 	    <div class="row">
 		<div class="col-sm-12">
 		    <div class="well footer">
-			Website created by ABC Sights
+			Copyright &copy;Dean and Pavel
 		    </div>
 		</div>
 	    </div>

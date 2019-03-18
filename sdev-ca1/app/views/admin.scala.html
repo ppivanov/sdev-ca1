@@ -27,30 +27,35 @@
        
             @for(a<-admins) {
                 @if(a.getRole() == "admin"){
-               <tr>
+                <tr>
                     @if(env.resource("public/images/profileImages/" + a.getId + "thumb.jpg").isDefined) {
                         <td><img src="/assets/images/profileImages/@(a.getId + "thumb.jpg")"/></td>
                     } else {
                         <td><img src="/assets/images/profileImages/noImage.jpg"/></td>
                     }
-                  <td>@a.getEmail</td>
-                  <td>@a.getEmpFirstName</td>
-                  <td>@a.getEmpLastName</td>
-                  <td>@a.getDateOfBirthString</td>
-                  <td>@a.getMobileNumber</td>
-                  <td>@a.getDepartment.getName</td>
-                  <!-- Update button -->
+                    <td>@a.getEmail</td>
+                    <td>@a.getEmpFirstName</td>
+                    <td>@a.getEmpLastName</td>
+                    <td>@a.getDateOfBirthString</td>
+                    <td>@a.getMobileNumber</td>
+                    <td>@a.getDepartment.getName</td>
+                  
+                    @if(user != null){
+                    <!-- Update button -->
 						<td>
 							<a href="@routes.LoginController.updateAdmin(a.getEmail)" class="button-xs btn-danger">
 								<span class="glyphicon glyphicon-pencil"></span>
 							</a>
                         </td>
-                  <!-- Delete button -->
+                        @if("admin".equals(user.getRole())){
+                    <!-- Delete button -->
 						<td>
 							<a href="@routes.LoginController.deleteAdmin(a.getEmail)" class="button-xs btn-danger" onclick="return confirmDel();">
 								<span class="glyphicon glyphicon-trash"></span>
 							</a>
                         </td>
+                        }
+                    }
                </tr>
                 }
             }

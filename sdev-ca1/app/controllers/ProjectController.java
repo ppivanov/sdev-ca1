@@ -28,6 +28,7 @@ public class ProjectController extends Controller {
     private FormFactory formFactory;
 
     @Security.Authenticated(Secured.class)
+    @With(AuthAdmin.class)
     public Result addProject() {
         Form<Project> projectForm = formFactory.form(Project.class);
         return ok(addProject.render(projectForm, Employee.getUserById(session().get("email"))));
@@ -35,6 +36,7 @@ public class ProjectController extends Controller {
 
     @Security.Authenticated(Secured.class)
     @Transactional
+    @With(AuthAdmin.class)
     public Result addProjectSubmit() {
         Form<Project> newProjectForm = formFactory.form(Project.class).bindFromRequest();
 
@@ -85,6 +87,7 @@ public class ProjectController extends Controller {
         return redirect(controllers.routes.HomeController.index()); //redirect to projects page
     }
 
+    @Security.Authenticated(Secured.class)
     public Result showMyProjects() {
         List<Project> myProjects = null;
         if(Employee.getUserById(session().get("email")) != null){

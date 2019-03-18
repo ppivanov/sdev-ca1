@@ -38,9 +38,9 @@ Seq[Any](format.raw/*1.63*/("""
       <table class="table table-bordered table-hover table-condensed">
         <thead>
           <tr>
-            <th>Project #</th>
             <th>Project Name</th>
             <th>Description</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
@@ -51,40 +51,44 @@ Seq[Any](format.raw/*1.63*/("""
             <td>"""),_display_(/*19.18*/p/*19.19*/.getProjectDescription),format.raw/*19.41*/("""</td>
             <td>"""),_display_(/*20.18*/p/*20.19*/.getProjectStatus),format.raw/*20.36*/("""</td>
             
-            <!-- Update button -->
-            <td>
-              <a href=""""),_display_(/*24.25*/routes/*24.31*/.ProjectController.updateProject(p.getProjectId)),format.raw/*24.79*/("""" class="button-xs btn-danger">
-                <span class="glyphicon glyphicon-pencil"></span>
-              </a>
-            </td>
-            <!-- Delete button -->
-            <td>
-              <a href=""""),_display_(/*30.25*/routes/*30.31*/.ProjectController.deleteProject(p.getProjectId)),format.raw/*30.79*/("""" class="button-xs btn-danger"
-                onclick="return confirmDel();">
-                <span class="glyphicon glyphicon-trash"></span>
-              </a>
-            </td>
-            </tr>
-          """)))}),format.raw/*36.12*/("""
+            """),_display_(/*22.14*/if(user != null)/*22.30*/{_display_(Seq[Any](format.raw/*22.31*/("""
+              """),format.raw/*23.15*/("""<!-- Update button -->
+              <td>
+                <a href=""""),_display_(/*25.27*/routes/*25.33*/.ProjectController.updateProject(p.getProjectId)),format.raw/*25.81*/("""" class="button-xs btn-danger">
+                  <span class="glyphicon glyphicon-pencil"></span>
+                </a>
+              </td>
+              <!-- Delete button -->
+              """),_display_(/*30.16*/if("admin".equals(user.getRole()))/*30.50*/{_display_(Seq[Any](format.raw/*30.51*/("""
+                """),format.raw/*31.17*/("""<td>
+                  <a href=""""),_display_(/*32.29*/routes/*32.35*/.ProjectController.deleteProject(p.getProjectId)),format.raw/*32.83*/("""" class="button-xs btn-danger"
+                    onclick="return confirmDel();">
+                    <span class="glyphicon glyphicon-trash"></span>
+                  </a>
+                </td>
+              """)))}),format.raw/*37.16*/("""
+            """)))}),format.raw/*38.14*/("""
+            """),format.raw/*39.13*/("""</tr>
+          """)))}),format.raw/*40.12*/("""
 
-        """),format.raw/*38.9*/("""</tbody>
+        """),format.raw/*42.9*/("""</tbody>
       </table>
 
       <p>
-        <a href=""""),_display_(/*42.19*/routes/*42.25*/.ProjectController.addProject()),format.raw/*42.56*/("""">
+        <a href=""""),_display_(/*46.19*/routes/*46.25*/.ProjectController.addProject()),format.raw/*46.56*/("""">
           <button class="btn btn-primary">Add a new project</button>
         </a>
       </p>
 
-      """),_display_(/*47.8*/if(user != null)/*47.24*/ {_display_(Seq[Any](format.raw/*47.26*/("""
-        """),format.raw/*48.9*/("""<p>
-            <a href=""""),_display_(/*49.23*/routes/*49.29*/.ProjectController.showMyProjects()),format.raw/*49.64*/("""">
+      """),_display_(/*51.8*/if(user != null)/*51.24*/ {_display_(Seq[Any](format.raw/*51.26*/("""
+        """),format.raw/*52.9*/("""<p>
+            <a href=""""),_display_(/*53.23*/routes/*53.29*/.ProjectController.showMyProjects()),format.raw/*53.64*/("""">
               <button class="btn btn-primary">Show my projects</button>
             </a>
         </p>
-      """)))}),format.raw/*53.8*/("""
+      """)))}),format.raw/*57.8*/("""
       
-  """),format.raw/*55.3*/("""</section>
+  """),format.raw/*59.3*/("""</section>
 
 """)))}))
       }
@@ -102,11 +106,11 @@ Seq[Any](format.raw/*1.63*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Mar 18 20:58:29 GMT 2019
+                  DATE: Mon Mar 18 21:26:32 GMT 2019
                   SOURCE: D:/Computing/sdev-ca1/sdev-ca1/sdev-ca1/app/views/projects.scala.html
-                  HASH: f67f0a10b8a51e2238f33b44d431e3fe66da997d
-                  MATRIX: 987->1|1143->62|1171->65|1201->87|1240->89|1270->93|1664->460|1698->478|1738->480|1767->481|1817->504|1827->505|1863->520|1914->544|1924->545|1967->567|2018->591|2028->592|2066->609|2192->708|2207->714|2276->762|2519->978|2534->984|2603->1032|2849->1247|2888->1259|2972->1316|2987->1322|3039->1353|3174->1462|3199->1478|3239->1480|3276->1490|3330->1517|3345->1523|3401->1558|3547->1674|3586->1686
-                  LINES: 28->1|33->1|34->2|34->2|34->2|35->3|49->17|49->17|49->17|49->17|50->18|50->18|50->18|51->19|51->19|51->19|52->20|52->20|52->20|56->24|56->24|56->24|62->30|62->30|62->30|68->36|70->38|74->42|74->42|74->42|79->47|79->47|79->47|80->48|81->49|81->49|81->49|85->53|87->55
+                  HASH: f55157f28e025ba92a81b8efdc36f5f7ba0dab30
+                  MATRIX: 987->1|1143->62|1171->65|1201->87|1240->89|1270->93|1661->457|1695->475|1735->477|1764->478|1814->501|1824->502|1860->517|1911->541|1921->542|1964->564|2015->588|2025->589|2063->606|2124->640|2149->656|2188->657|2232->673|2329->743|2344->749|2413->797|2637->994|2680->1028|2719->1029|2765->1047|2826->1081|2841->1087|2910->1135|3157->1351|3203->1366|3245->1380|3294->1398|3333->1410|3417->1467|3432->1473|3484->1504|3619->1613|3644->1629|3684->1631|3721->1641|3775->1668|3790->1674|3846->1709|3992->1825|4031->1837
+                  LINES: 28->1|33->1|34->2|34->2|34->2|35->3|49->17|49->17|49->17|49->17|50->18|50->18|50->18|51->19|51->19|51->19|52->20|52->20|52->20|54->22|54->22|54->22|55->23|57->25|57->25|57->25|62->30|62->30|62->30|63->31|64->32|64->32|64->32|69->37|70->38|71->39|72->40|74->42|78->46|78->46|78->46|83->51|83->51|83->51|84->52|85->53|85->53|85->53|89->57|91->59
                   -- GENERATED --
               */
           

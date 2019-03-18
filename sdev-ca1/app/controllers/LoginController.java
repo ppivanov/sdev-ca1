@@ -58,6 +58,7 @@ public class LoginController extends Controller {
     }
 
     @Security.Authenticated(Secured.class)
+    @With(AuthAdmin.class)
     public Result addEmployee() {
         Form<Employee> empForm = formFactory.form(Employee.class);
         Form<Address> aForm = formFactory.form(Address.class);
@@ -66,6 +67,7 @@ public class LoginController extends Controller {
 
     @Security.Authenticated(Secured.class)
     @Transactional
+    @With(AuthAdmin.class)
     public Result addEmployeeSubmit() {
     Form<Employee> newEmpForm = formFactory.form(Employee.class).bindFromRequest();
     Form<Address> newAddressForm = formFactory.form(Address.class).bindFromRequest();
@@ -109,6 +111,7 @@ public class LoginController extends Controller {
     }
 
     @Security.Authenticated(Secured.class)
+    @With(AuthAdmin.class)
     public Result updateAdmin(String email) {
         Employee e;
         Address a;
@@ -131,6 +134,7 @@ public class LoginController extends Controller {
     }
 
     @Security.Authenticated(Secured.class)
+    @With(AuthAdmin.class)
     public Result addAdmin() {
         Form<Employee> empForm = formFactory.form(Employee.class);
         Form<Address> aForm = formFactory.form(Address.class);
@@ -139,6 +143,7 @@ public class LoginController extends Controller {
 
     @Security.Authenticated(Secured.class)
     @Transactional
+    @With(AuthAdmin.class)
     public Result addAdminSubmit() {
     Form<Employee> newEmpForm = formFactory.form(Employee.class).bindFromRequest();
     Form<Address> newAddressForm = formFactory.form(Address.class).bindFromRequest();
@@ -178,6 +183,7 @@ public class LoginController extends Controller {
     }
 
     @Security.Authenticated(Secured.class)
+    @With(AuthAdmin.class)
     public Result updateEmployee(String email) {
         Employee e;
         Address a;

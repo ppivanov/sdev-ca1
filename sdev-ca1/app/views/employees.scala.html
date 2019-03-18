@@ -39,18 +39,23 @@
                   <td>@e.getDateOfBirthString</td>
                   <td>@e.getMobileNumber</td>
                   <td>@e.getDepartment.getName</td>
+
+                  @if(user != null){
                   <!-- Update button -->
 						<td>
 							<a href="@routes.LoginController.updateEmployee(e.getEmail)" class="button-xs btn-danger">
 								<span class="glyphicon glyphicon-pencil"></span>
 							</a>
                         </td>
+                        @if("admin".equals(user.getRole())){
                   <!-- Delete button -->
 						<td>
 							<a href="@routes.LoginController.deleteEmployee(e.getEmail)" class="button-xs btn-danger" onclick="return confirmDel();">
 								<span class="glyphicon glyphicon-trash"></span>
 							</a>
                         </td>
+                        }
+                    }
                </tr>
                 }
             }
